@@ -1,12 +1,17 @@
 # wotageipedia
-计划实现的御宅艺百科网站（可能会基于维基框架（？
+御宅艺百科网站（开发中）
+ヲタ芸百科サイト（開発中）
 
-<u>**The developping will be started after [ANIME_SEIRI.web Project](https://github.com/elpwc/ANIME-SEIRI.web) is done.**</u>
+----
+**功能：**
+1. 用户注册，副歌技、打师、界隈的归类、查询、登记；  
+2. 从Youtube, Bilibili, Twitter引用技连视频播放。（自身不包含视频上传功能）  
+  
+其他的功能建议请写到issue里）  
 
-**機能：**  
-1. 使用者（User）として登録、オリ技の投稿（動画siteのURLで）、技情報の編集、界隈の登録等（Site自体は動画upload機能含ませぬ）  
-2. Youtube・Bilibiliから技動画の引用、再生  
-3. 打ち師間の交流（？）等
-
-何か他の機能考えたらまた追加します）
-
+----
+**機能：**    
+1. ユーザ登録。サビ技・打ち師・界隈の分類・検索・登録；  
+2. Youtube・Bilibili・Twitterから技動画を引用し再生。（サイト自体は動画アップロード昨日含まない）  
+  
+また他の機能のアドバイスがあったらissueに書いてください）  
