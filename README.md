@@ -20,7 +20,8 @@
 ### ✒補足/补充/Supplement：
 支持日本語 简中 繁中 한국어 English(大概？
 
-### ❤連絡/联系/Contact：
+### ❤連絡/联系/Contact：  
+欢迎来协力开发~ ヾ(≧▽≦*)o  
 email: elpwc@hotmail.com  
 twitter: @elpwc  
 qq: 2575784532  
