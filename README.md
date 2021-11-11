@@ -10,17 +10,18 @@
   
 ### 🛠機能/功能/Functions：
 ・ ユーザ登録。サビ技・打ち師・界隈の分類・検索・登録；  
-・ Youtube・Bilibili・Twitterから技動画を引用し再生。（サイト自体は動画アップロード昨日含まない）  
-また他の機能のアドバイスがあったらissueに書いてください）  
+・ Youtube・Bilibili・Twitterから技動画を引用し再生。（サイト自体は動画アップロード機能含まない）  
+また他の機能のアドバイスがあったらissueに書いてください。  
   
 ・ 用户注册，副歌技、打师、界隈的归类、查询、登记；  
 ・ 从Youtube, Bilibili, Twitter引用技连视频播放。（自身不包含视频上传功能）  
-其他的功能建议请写到issue里）  
+其他的功能建议请写到issue里。  
   
 ### ✒補足/补充/Supplement：
 支持日本語 简中 繁中 한국어 English(大概？
 
 ### ❤連絡/联系/Contact：
 email: elpwc@hotmail.com  
-Twitter: @elpwc  
+twitter: @elpwc  
 qq: 2575784532  
+telegram: @elpwc  
