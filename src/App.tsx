@@ -8,6 +8,7 @@ import LangUtils from './locales/langUtils';
 import Main from './Main';
 import Page404 from './pages/404';
 import cookie from 'react-cookies';
+import Wotagei from './pages/Wotagei';
 
 function App() {
   const [update, setUpdate]: [boolean, any] = useState(false);
@@ -63,6 +64,17 @@ function App() {
             index
             element={
               <Home
+                update={update}
+                setUpdate={() => {
+                  updateNow();
+                }}
+              />
+            }
+          ></Route>
+          <Route
+            path='wotagei'
+            element={
+              <Wotagei
                 update={update}
                 setUpdate={() => {
                   updateNow();

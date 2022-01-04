@@ -1,0 +1,63 @@
+.videoTitleP {
+  margin: 0;
+}
+
+.videoTitle {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 120%;
+  border-left: solid 3px orange;
+  padding-left: 5px;
+  color: gray;
+}
+
+.wazaMainName {
+  font-weight: bold;
+  font-size: 120%;
+  color: black;
+  border: solid 1px orange;
+  border-radius: 3px;
+}
+
+.wazaAfterName {
+  color: gray;
+  font-size: 80%;
+  align-self: end;
+}
+
+.uploadLinkList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 1px lightgray;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  width: 60%;
+  height: 40px;
+  font-size: 110%;
+
+  text-align: center;
+  box-shadow: 0 0 3px 0 lightgray;
+  transition: all 0.2s;
+}
+
+.uploadLinkList:hover {
+  background-color: rgb(221, 221, 221);
+  width: 65%;
+}
+
+.uploadLinkList span:last-child {
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}
+.uploadLinkList span:first-child {
+  align-self: center;
+}
+
+.currentList li{
+    font-size: 105%;
+    margin-bottom: 5px;
+}
