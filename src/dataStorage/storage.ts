@@ -1,4 +1,5 @@
 import { Lang } from '../locales/langUtils';
+import WinSize, { WinSizeUtils } from '../utils/enums/WinSize';
 
 // Provides a way to share data globally.
 class Storage<T> {
@@ -27,3 +28,5 @@ export const AdminModeStorage: Storage<number> = new Storage<number>(0); // 0 no
 
 // Running device
 export const DeviceStorage: Storage<number> = new Storage<number>(0); // 0 pc, 1 mobile
+
+export const WinWidthStorage: Storage<WinSize> = new Storage<WinSize>(WinSize.default);

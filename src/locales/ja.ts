@@ -1,10 +1,11 @@
 export default {
   header: {
     home: 'ホーム',
-    wotagei: 'ヲタ芸',
+    wotagei: 'サビ技',
     chikagei: '地下芸',
     bbs: '掲示板',
     kaiwaimap: '界隈地図',
+    user: 'アカウント'
   },
 
   components: {},

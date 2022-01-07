@@ -1,5 +1,6 @@
 import { Lang } from './locales/langUtils';
 
 export default {
-  usingLanguages: [Lang.en, Lang.ja, Lang.zh_cn, Lang.zh_tw],
+  usingLanguages: [Lang.en, Lang.ja, Lang.zhcn, Lang.zhtw, Lang.ko],
+  root: '/wotagei/'
 };

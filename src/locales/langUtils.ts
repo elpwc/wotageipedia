@@ -1,11 +1,14 @@
 import ZhCn from './zh_cn';
 import Ja from './ja';
+import ZhTw from './zh_tw';
+import En from './en';
+import Ko from './ko';
 import { LangStorage } from '../dataStorage/storage';
 
 export enum Lang {
-  zh_cn,
-  zh_tw,
   ja,
+  zhcn,
+  zhtw,
   ko,
   en,
   vi,
@@ -19,14 +22,17 @@ export default class LangUtils {
       currentLang = LangStorage.value;
     }
     switch (currentLang) {
-      case Lang.zh_cn:
-        // @ts-ignore
+      case Lang.zhcn:
         return ZhCn;
       case Lang.ja:
-        // @ts-ignore
         return Ja;
+      case Lang.zhtw:
+        return ZhTw;
+      case Lang.en:
+        return En;
+      case Lang.ko:
+        return Ko;
       default:
-        // @ts-ignore
         return ZhCn;
     }
   }
@@ -35,9 +41,9 @@ export default class LangUtils {
   static enumStrToLangName(str: string, lang?: Lang | undefined): string {
     const L = this.selectLang(lang);
     switch (this.enumStrToLang(str)) {
-      case Lang.zh_cn:
+      case Lang.zhcn:
         return L.utils.langs.zh_cn;
-      case Lang.zh_tw:
+      case Lang.zhtw:
         return L.utils.langs.zh_tw;
       case Lang.ja:
         return L.utils.langs.ja;
@@ -59,10 +65,10 @@ export default class LangUtils {
 
   static enumStrToLang(str: string): Lang {
     switch (str) {
-      case 'zh_cn':
-        return Lang.zh_cn;
-      case 'zh_tw':
-        return Lang.zh_tw;
+      case 'zhcn':
+        return Lang.zhcn;
+      case 'zhtw':
+        return Lang.zhtw;
       case 'ja':
         return Lang.ja;
       case 'ko':
@@ -76,16 +82,16 @@ export default class LangUtils {
       case 'ms':
         return Lang.ms;
       default:
-        return Lang.zh_cn;
+        return Lang.zhcn;
     }
   }
 
   static LangToEnumStr(lang: Lang): string {
     switch (lang) {
-      case Lang.zh_cn:
-        return 'zh_cn';
-      case Lang.zh_tw:
-        return 'zh_tw';
+      case Lang.zhcn:
+        return 'zhcn';
+      case Lang.zhtw:
+        return 'zhtw';
       case Lang.ja:
         return 'ja';
       case Lang.ko:
@@ -99,7 +105,7 @@ export default class LangUtils {
       case Lang.ms:
         return 'ms';
       default:
-        return 'zh_cn';
+        return 'zhcn';
     }
   }
 

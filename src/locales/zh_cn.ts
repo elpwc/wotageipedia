@@ -1,10 +1,11 @@
 export default {
   header: {
     home: '主页',
-    wotagei: 'WOTA艺',
+    wotagei: '副歌技',
     chikagei: '地下艺',
     bbs: '讨论区',
     kaiwaimap: '界隈地图',
+    user: '用户设置'
   },
 
   components: {

@@ -1,8 +1,8 @@
 import { Divider } from 'antd';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CurrentPageStorage, LangStorage } from '../dataStorage/storage';
-import LangUtils from '../locales/langUtils';
+import { CurrentPageStorage, LangStorage } from '../../dataStorage/storage';
+import LangUtils from '../../locales/langUtils';
 
 interface P {
   title?: JSX.Element;
@@ -11,7 +11,7 @@ interface P {
   returnRoute?: string;
 }
 
-export default function Page404(props: P) {
+export default (props: P) => {
   useEffect(() => {
     CurrentPageStorage.set('404');
   }, []);

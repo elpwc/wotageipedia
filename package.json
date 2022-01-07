@@ -2,6 +2,7 @@
   "name": "wotageipedia",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.elpwc.com/wotagei",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -18,6 +19,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "typescript": "^4.4.4",
+    "wanakana": "^4.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -45,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-cookies": "^0.1.0"
+    "@types/react-cookies": "^0.1.0",
+    "@types/wanakana": "^4.0.3"
   }
 }
