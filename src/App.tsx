@@ -95,8 +95,8 @@ function App() {
         <Route path=':lang' element={<Main updater={{ update, setUpdate: updateNow }} />}>
           <Route index element={<Home updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path='wotagei' element={<Wotagei updater={{ update, setUpdate: updateNow }} />}></Route>
-          <Route path='waza' element={<Navigate to='../wotagei' />}></Route>
-          <Route path='waza/:wazaid' element={<Waza updater={{ update, setUpdate: updateNow }} />}></Route> <Route path='bbs' element={<BBS />}></Route>
+          <Route path='wotagei/:wazaid' element={<Waza updater={{ update, setUpdate: updateNow }} />}></Route>
+          <Route path='bbs' element={<BBS />}></Route>
           <Route path='404' element={<ErrorPage />}></Route>
           <Route path='*' element={<ErrorPage />}></Route>
         </Route>

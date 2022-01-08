@@ -60,14 +60,14 @@ export default (props: P) => {
           padding: '0px',
           height: '50px',
           backgroundColor: '#141414',
-          borderBottom: 'solid 5px orange',
+          borderBottom: 'solid 5px #df3b3b',
           display: 'flex',
           flexFlow: 'column-reverse nowrap',
           zIndex: 4,
           WebkitBackfaceVisibility: 'hidden',
         }}
       >
-        <Row justify='space-between'>
+        <Row justify='space-between' wrap={false}>
           {WinWidthStorage.value >= WinSize.lg ? (
             <Col span={3}>
               <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap' }}>
@@ -86,22 +86,34 @@ export default (props: P) => {
             <></>
           )}
 
-          <Col span={WinWidthStorage.value >= WinSize.sm ? 4 : 10}>
-            <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: '5px' }}>
-              <div style={{ paddingRight: '10px', borderRadius: '10px', backgroundColor: '#555555', display: 'flex', flexDirection: 'row' }}>
-                <input
-                  style={{ width: '80%', outline: 'none', fontSize: '100%', border: 'none', backgroundColor: 'transparent', marginLeft: '10px', marginRight: '10px', color: 'white' }}
-                  placeholder='搜索技·系·界隈·打师'
-                />
-                <Link to='./' style={{ display: 'flex', flexDirection: 'column-reverse' }}>
-                  <span style={{ color: 'white' }}>
-                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' className='bi bi-search' viewBox='0 0 16 16'>
-                      <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
-            </div>
+          <Col
+            span={WinWidthStorage.value >= WinSize.sm ? 4 : undefined}
+            style={{
+              marginRight: '5px',
+              marginLeft: '5px',
+              width: '-webkit-fill-available',
+              maxWidth: '300px',
+              marginTop: '-5px',
+              marginBottom: '5px',
+              paddingRight: '10px',
+              borderRadius: '10px',
+              backgroundColor: '#666666',
+              display: 'flex',
+              flexDirection: 'row',
+            }}
+          >
+            <input
+              className='searchInput'
+              style={{ width: '80%', outline: 'none', fontSize: '110%', border: 'none', backgroundColor: 'transparent', marginLeft: '10px', marginRight: '10px', color: 'white' }}
+              placeholder='搜索技·系·界隈·打师'
+            />
+            <Link to='./' style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+              <span style={{ color: 'white' }}>
+                <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' className='bi bi-search' viewBox='0 0 16 16'>
+                  <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
+                </svg>
+              </span>
+            </Link>
           </Col>
 
           <Col style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'end' }}>
@@ -141,7 +153,7 @@ export default (props: P) => {
                 </Menu>
               }
             >
-              <a className='ant-dropdown-link' style={{ margin: '5px' }} onClick={(e) => e.preventDefault()}>
+              <a className='ant-dropdown-link' style={{ marginTop: '5px', marginLeft: '10px', marginRight: '10px' }} onClick={(e) => e.preventDefault()}>
                 <span style={{ color: 'white', width: 'max-content' }}>
                   <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' className='bi bi-translate' viewBox='0 0 16 16'>
                     <path d='M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z' />
@@ -181,6 +193,7 @@ export default (props: P) => {
             zIndex: 2,
             backgroundColor: '#141414',
             WebkitBackfaceVisibility: 'hidden',
+            boxShadow: '0 0 5px 0 gray'
           }}
         >
           <PhoneMenuBar />

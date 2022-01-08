@@ -31,7 +31,7 @@ export default (props: P) =>{
   let currentId: number = Number(params.wazaid);
 
   useEffect(() => {
-    CurrentPageStorage.set('waza');
+    CurrentPageStorage.set('wotagei');
     props.updater.setUpdate();
   }, []);
   return (

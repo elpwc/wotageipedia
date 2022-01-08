@@ -15,10 +15,6 @@
   font-size: 110%;
 }
 
-.menu-item:hover {
-  background-color: rgb(109, 109, 109);
-}
-
 .menu-item-active {
   background-color: rgb(109, 109, 109);
 }
@@ -38,10 +34,6 @@
   margin-bottom: 3px;
 }
 
-.uploadBtn:hover {
-  background-color: rgb(240, 208, 65);
-}
-
 .menuBtn {
   width: max-content;
   border: 'solid 1px white';
@@ -56,10 +48,6 @@
   margin: 0;
 }
 
-.menuBtn:hover {
-  background-color: rgb(240, 208, 65);
-}
-
 .menu-item-phone {
   padding-left: 0px;
   padding-right: 0px;
@@ -69,17 +57,34 @@
   flex-direction: column;
   height: 100%;
   padding-bottom: 5px;
-  width: max-content;
+  width: 20%;
   color: white;
   font-size: 80%;
   text-align: center;
   transition: background-color 0.2s;
 }
 
-.menu-item-phone p{
+.menu-item-phone p {
   margin: 0;
 }
 
 .menu-item-active-phone {
-  background-color: rgb(109, 109, 109);
+  background-color: #df3b3b;
+}
+
+@media (any-hover: hover) {
+  .menu-item:hover {
+    background-color: rgb(109, 109, 109);
+  }
+  .menuBtn:hover {
+    background-color: rgb(240, 208, 65);
+  }
+  .uploadBtn:hover {
+    background-color: rgb(240, 208, 65);
+  }
+}
+
+.searchInput::placeholder {
+  color: lightgray;
+  font-size: 100%;
 }

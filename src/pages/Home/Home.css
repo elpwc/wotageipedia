@@ -45,11 +45,6 @@
   transition: all 0.2s;
 }
 
-.uploadLinkList:hover {
-  background-color: rgb(221, 221, 221);
-  width: 65%;
-}
-
 .uploadLinkList span:last-child {
   align-self: center;
   text-align: center;
@@ -59,19 +54,24 @@
   align-self: center;
 }
 
-.currentList li{
-    font-size: 105%;
-    margin-bottom: 5px;
+.currentList li {
+  font-size: 105%;
+  margin-bottom: 5px;
 }
 
-.dailywaza{
+.dailywaza {
   border-radius: 10px;
   padding: 5px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.dailywaza:hover{
-  box-shadow: 0 0 5px 0 orange;
+@media (any-hover: hover) {
+  .uploadLinkList:hover {
+    background-color: rgb(221, 221, 221);
+    width: 65%;
+  }
+  .dailywaza:hover {
+    box-shadow: 0 0 5px 0 orange;
+  }
 }
-

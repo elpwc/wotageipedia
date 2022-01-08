@@ -10,7 +10,7 @@ export default WinSize;
 
 export class WinSizeUtils {
   public static getWinSize = (width: number) => {
-    if (width < 660) {
+    if (width < 670) {
       return WinSize.xs;
     } else if (width < 780) {
       return WinSize.sm;
