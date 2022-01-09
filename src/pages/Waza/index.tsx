@@ -31,6 +31,7 @@ export default (props: P) =>{
   let currentId: number = Number(params.wazaid);
 
   useEffect(() => {
+    document.title = '烈剑爆炎刃 - WOTAGEIPEDIA'
     CurrentPageStorage.set('wotagei');
     props.updater.setUpdate();
   }, []);

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link, Navigate, Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { CurrentPageStorage, LangStorage, AdminModeStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
 import BackgroundImage from './resource/bg.jpg';
-import LangUtils from '../../locales/langUtils';
+import LangUtils, { Lang } from '../../locales/langUtils';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import cookie from 'react-cookies';
 import appconfig from '../../appconfig';
@@ -193,7 +193,7 @@ export default (props: P) => {
             zIndex: 2,
             backgroundColor: '#141414',
             WebkitBackfaceVisibility: 'hidden',
-            boxShadow: '0 0 5px 0 gray'
+            boxShadow: '0 0 5px 0 gray',
           }}
         >
           <PhoneMenuBar />

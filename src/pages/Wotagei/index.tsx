@@ -8,6 +8,7 @@ interface P {
 
 export default (props: P) => {
   useEffect(() => {
+    document.title = '副歌技一览 - WOTAGEIPEDIA';
     CurrentPageStorage.set('wotagei');
     props.updater.setUpdate();
   }, []);

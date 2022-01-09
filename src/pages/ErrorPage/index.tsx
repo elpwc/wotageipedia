@@ -13,6 +13,7 @@ interface P {
 
 export default (props: P) => {
   useEffect(() => {
+    document.title = '页面不存在 - WOTAGEIPEDIA';
     CurrentPageStorage.set('404');
   }, []);
   let title = props.title ? props.title : <>这个页面不存在捏</>;

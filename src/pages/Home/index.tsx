@@ -41,6 +41,7 @@ interface P {
 export default (props: P) => {
   const navigate = useNavigate();
   useEffect(() => {
+    document.title = 'WOTAGEIPEDIA';
     CurrentPageStorage.set('home');
     props.updater.setUpdate();
   }, []);
