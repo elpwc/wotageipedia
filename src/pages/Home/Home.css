@@ -69,7 +69,7 @@
 @media (any-hover: hover) {
   .uploadLinkList:hover {
     background-color: rgb(221, 221, 221);
-    width: 65%;
+    width: 85%;
   }
   .dailywaza:hover {
     box-shadow: 0 0 5px 0 orange;
