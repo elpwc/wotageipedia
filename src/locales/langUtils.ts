@@ -17,6 +17,18 @@ export enum Lang {
 }
 
 export default class LangUtils {
+
+  public static LangNames: [Lang, string][] = [
+    [Lang.ja, '日本語'],
+    [Lang.zhcn, '简体中文'],
+    [Lang.zhtw, '正體中文'],
+    [Lang.ko, '한국어'],
+    [Lang.vi, 'Tiếng Việt'],
+    [Lang.en, 'English'],
+    [Lang.ms, 'Bahasa Melayu'],
+    [Lang.id, 'Bahasa Indonesia'],
+  ]
+
   static selectLang(currentLang?: Lang | undefined): typeof ZhCn {
     if (currentLang === undefined) {
       currentLang = LangStorage.value;
@@ -26,12 +38,14 @@ export default class LangUtils {
         return ZhCn;
       case Lang.ja:
         return Ja;
+        /*
       case Lang.zhtw:
         return ZhTw;
       case Lang.en:
         return En;
       case Lang.ko:
         return Ko;
+        */
       default:
         return ZhCn;
     }

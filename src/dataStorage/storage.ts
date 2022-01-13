@@ -30,3 +30,5 @@ export const AdminModeStorage: Storage<number> = new Storage<number>(0); // 0 no
 export const DeviceStorage: Storage<number> = new Storage<number>(0); // 0 pc, 1 mobile
 
 export const WinWidthStorage: Storage<WinSize> = new Storage<WinSize>(WinSize.default);
+
+export const IsFirstEnterStorage: Storage<boolean> = new Storage<boolean>(true);

@@ -1,7 +1,8 @@
 import { Button, Col, Row, Space, Tag } from 'antd';
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CurrentPageStorage, WinWidthStorage } from '../../dataStorage/storage';
+import { CurrentPageStorage, IsFirstEnterStorage, WinWidthStorage } from '../../dataStorage/storage';
+import LangUtils from '../../locales/langUtils';
 import WinSize from '../../utils/enums/WinSize';
 import Updater from '../../utils/Updater';
 import MainContent from './components/MainContent';
@@ -40,18 +41,30 @@ interface P {
 
 export default (props: P) => {
   const navigate = useNavigate();
+  
+  const L = LangUtils.selectLang();
+  
   useEffect(() => {
     document.title = 'WOTAGEIPEDIA';
     CurrentPageStorage.set('home');
     props.updater.setUpdate();
   }, []);
+
+
+  if (IsFirstEnterStorage.value) {
+    alert(L.demoTips.start.alert1);
+    alert(L.demoTips.start.alert2);
+    alert(L.demoTips.start.alert3);
+    IsFirstEnterStorage.set(false);
+  }
+
   return (
     <>
       <Row justify='space-around' wrap style={{ marginTop: '30px' }}>
-        <Col >
+        <Col>
           <MainContent />
         </Col>
-        <Col span={WinWidthStorage.value>= WinSize.lg? 6:undefined}>
+        <Col span={WinWidthStorage.value >= WinSize.lg ? 6 : undefined}>
           <RightSide />
         </Col>
       </Row>

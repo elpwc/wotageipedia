@@ -145,9 +145,15 @@ export default (props: P) => {
                     props.updater.setUpdate();
                   }}
                 >
-                  {LangUtils.getEnumStrings().map((lang: string) => {
-                    if (appconfig.usingLanguages.includes(LangUtils.enumStrToLang(lang))) {
-                      return <Menu.Item key={lang}>{LangUtils.enumStrToLangName(lang, LangUtils.enumStrToLang(lang))}</Menu.Item>;
+                  {LangUtils.LangNames.map((lang: [Lang, string]) => {
+                    if (appconfig.usingLanguages.includes(lang[0])) {
+                      return <Menu.Item key={LangUtils.LangToEnumStr(lang[0])}>{lang[1]}</Menu.Item>;
+                    } else {
+                      return (
+                        <Menu.Item key={'unavailable-' + LangUtils.LangToEnumStr(lang[0])} style={{ backgroundColor: 'lightgray', color: 'gray', cursor: 'not-allowed' }}>
+                          {lang[1]}
+                        </Menu.Item>
+                      );
                     }
                   })}
                 </Menu>
@@ -199,7 +205,33 @@ export default (props: P) => {
           <PhoneMenuBar />
         </div>
       )}
+      <div
+        style={{
+          position: 'fixed',
+          height: 'fit-content',
+          width: 'max-content',
+          right: '0px',
+          top: '10%',
+          zIndex: 2,
+          border: 'solid 1px white',
+          backgroundColor: 'whitesmoke',
+          WebkitBackfaceVisibility: 'hidden',
+          boxShadow: '0 0 5px 0 gray',
+        }}
+      >
+        <a href={LangStorage.value === Lang.zhcn ? 'https://www.wjx.cn/vj/PlWjk8b.aspx' : ''} target='_blank'>
+          ·{L.demoTips.survey}
+        </a>
+        <br />
 
+        <a
+          onClick={() => {
+            alert(L.demoTips.group.text);
+          }}
+        >
+          ·{L.demoTips.group.title}
+        </a>
+      </div>
       <div
         style={{
           position: 'absolute',
