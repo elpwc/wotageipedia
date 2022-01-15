@@ -24,22 +24,22 @@ interface P {
   updater: Updater;
 }
 
-export default (props: P) =>{
+export default (props: P) => {
   const params = useParams();
   const mylocation = useLocation();
 
   let currentId: number = Number(params.wazaid);
 
   useEffect(() => {
-    document.title = '烈剑爆炎刃 - WOTAGEIPEDIA'
+    document.title = '烈剑爆炎刃 - WOTAGEIPEDIA';
     CurrentPageStorage.set('wotagei');
     props.updater.setUpdate();
   }, []);
   return (
     <>
-      <Row style={{paddingTop: '30px'}}>
-        <Col span={6}>
-          <div style={{ border: 'solid 5px gray', borderRadius: '5px', padding: '10px', paddingBottom: '20px' }}>
+      <div style={{ width: '100%', height: 'fit-content', color: 'white', backgroundColor: '#0d0d0d' }}>
+        <Row style={{ padding: '10px' }} justify='space-around' wrap>
+          <Col span={15}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '30px', paddingBottom: '30px' }}>
               <p style={{ fontSize: '200%', fontWeight: 'bold', margin: 0 }}>烈剑爆炎刃</p>
               <p>
@@ -50,9 +50,8 @@ export default (props: P) =>{
                 </ruby>
               </p>
               <p>
-                  
                 <span>
-                  <a>ななせ  </a>
+                  <a>ななせ </a>
                 </span>
                 <span>・本家 </span>
               </p>
@@ -71,12 +70,11 @@ export default (props: P) =>{
                 </a>
               </div>
             </div>
-
-            <hr />
+            <hr/>
+          </Col>
+          <Col style={{marginTop: '10px'}}>
             <DetailItem title='别称'>
-              <div>
-                  烈剑保研人
-              </div>
+              <div>烈剑保研人</div>
             </DetailItem>
             <DetailItem title='相关技'>
               <div>
@@ -86,33 +84,17 @@ export default (props: P) =>{
             <DetailItem title='日文'>烈剣爆炎刃</DetailItem>
             <DetailItem title='假名'>れっけんばくえんにん</DetailItem>
             <DetailItem title='罗马字'>{wanakana.toRomaji('れっけんばくえんにん')}</DetailItem>
-            <DetailItem title='本家'><a>ななせ</a></DetailItem>
+            <DetailItem title='本家'>
+              <a>ななせ</a>
+            </DetailItem>
             <DetailItem title='作成时间'>2021年</DetailItem>
-          </div>
-        </Col>
-        <Col span={18}>
-            <article style={{paddingLeft: '20px', paddingRight: '20px'}}>
-                <section>
-                    <p>介绍</p>
-                    <hr/>
-                </section>
-                
-                <section>
-                    <p>技名由来</p>
-                    <hr/>
-                </section>
-                
-                <section>
-                    <p>要点</p>
-                    <hr/>
-                </section>
-                <section>
-                    <p>视频</p>
-                    <hr/>
-                </section>
-            </article>
-        </Col>
+          </Col>
+        </Row>
+      </div>
+
+      <Row style={{ paddingTop: '10px' }}>
+        <Col span={24}>rua</Col>
       </Row>
     </>
   );
-}
+};
