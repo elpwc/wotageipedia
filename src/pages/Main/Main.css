@@ -64,6 +64,10 @@
   transition: background-color 0.2s;
 }
 
+.menu-item-phone div {
+  color: white;
+}
+
 .menu-item-phone p {
   margin: 0;
 }
@@ -81,6 +85,11 @@
   }
   .uploadBtn:hover {
     background-color: rgb(240, 208, 65);
+  }
+  .menu-item-phone:hover {
+    background-color: rgb(255, 103, 103);
+    color: white;
+    font-weight: bold;
   }
 }
 

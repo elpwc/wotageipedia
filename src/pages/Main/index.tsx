@@ -13,6 +13,7 @@ import SiteMenu from './components/Menu';
 import WinSize from '../../utils/enums/WinSize';
 import Updater from '../../utils/Updater';
 import PhoneMenuBar from './components/PhoneMenuBar';
+import qqgroupcode from '../../resource/qqgroup.jpg';
 
 const { Option } = Select;
 
@@ -33,6 +34,8 @@ export default (props: P) => {
   const [rememberPw, setRememberPw]: [boolean, any] = useState(false);
   // Admin Win state
   const [adminWinState, setAdminWinState]: [number, any] = useState(AdminModeStorage.value === 1 ? 2 : 0); // 0 not admin, 1 open requireWin, 2 admin mode
+
+  const [qqgroupcodeModalVisibility, setqqgroupcodeModalVisibility] = useState(false);
 
   const params = useParams();
   const navigate = useNavigate();
@@ -226,11 +229,14 @@ export default (props: P) => {
 
         <a
           onClick={() => {
-            alert(L.demoTips.group.text);
+            setqqgroupcodeModalVisibility(true);
           }}
         >
           ·{L.demoTips.group.title}
         </a>
+        <Modal title='' visible={qqgroupcodeModalVisibility} footer={null} onCancel={() => {setqqgroupcodeModalVisibility(false)}}>
+          <img src={qqgroupcode} width='100%' height='80%'/>
+        </Modal>
       </div>
       <div
         style={{
