@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { useEffect } from 'react';
 import { CurrentPageStorage } from '../../dataStorage/storage';
 import { Navigate, useLocation, useParams } from 'react-router';
@@ -34,7 +35,7 @@ export default (props: P) => {
     document.title = '烈剑爆炎刃 - WOTAGEIPEDIA';
     CurrentPageStorage.set('wotagei');
     props.updater.setUpdate();
-  }, []);
+  }, [props.updater]);
   return (
     <>
       <div style={{ width: '100%', height: 'fit-content', color: 'white', backgroundColor: '#0d0d0d' }}>
@@ -42,6 +43,7 @@ export default (props: P) => {
           <Col span={15}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '30px', paddingBottom: '30px' }}>
               <p style={{ fontSize: '200%', fontWeight: 'bold', margin: 0 }}>烈剑爆炎刃</p>
+              <br/>
               <p>
                 <ruby>
                   烈剣爆炎刃<rp>(</rp>
@@ -92,8 +94,30 @@ export default (props: P) => {
         </Row>
       </div>
 
-      <Row style={{ paddingTop: '10px' }}>
-        <Col span={24}>rua</Col>
+      <Row style={{ paddingTop: '10px' }} justify='space-between' wrap>
+        <Col span={12}>
+          <article>
+
+          <section>
+            <p>介绍</p>
+            <hr/>
+            <p>rua</p>
+          </section>
+          
+          <section>
+            <p>名称来源</p>
+            <hr/>
+            <p>rua</p>
+          </section>
+          </article>
+        </Col>
+        <Col >
+        <div>
+          <div>
+            
+          </div>
+        </div>
+        </Col>
       </Row>
     </>
   );
