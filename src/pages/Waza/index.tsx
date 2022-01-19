@@ -5,6 +5,7 @@ import { Navigate, useLocation, useParams } from 'react-router';
 import { Row, Col, Tag } from 'antd';
 import * as wanakana from 'wanakana';
 import Updater from '../../utils/Updater';
+import './index.css';
 
 const DetailItem = ({ title, children }: { title: JSX.Element | string; children?: JSX.Element | string }) => {
   return (
@@ -35,13 +36,13 @@ export default (props: P) => {
     document.title = '烈剑爆炎刃 - WOTAGEIPEDIA';
     CurrentPageStorage.set('wotagei');
     props.updater.setUpdate();
-  }, [props.updater]);
+  }, []);//sb eslint
   return (
     <>
       <div style={{ width: '100%', height: 'fit-content', color: 'white', backgroundColor: '#0d0d0d' }}>
         <Row style={{ padding: '10px' }} justify='space-around' wrap>
           <Col span={15}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '30px', paddingBottom: '30px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '30px', paddingBottom: '30px' , textAlign: 'center'}}>
               <p style={{ fontSize: '200%', fontWeight: 'bold', margin: 0 }}>烈剑爆炎刃</p>
               <br/>
               <p>
@@ -96,27 +97,24 @@ export default (props: P) => {
 
       <Row style={{ paddingTop: '10px' }} justify='space-between' wrap>
         <Col span={12}>
-          <article>
-
-          <section>
-            <p>介绍</p>
-            <hr/>
-            <p>rua</p>
-          </section>
-          
-          <section>
-            <p>名称来源</p>
-            <hr/>
-            <p>rua</p>
-          </section>
-          </article>
+            <div>
+              
+            </div>
         </Col>
-        <Col >
-        <div>
-          <div>
-            
-          </div>
-        </div>
+        <Col >          <article>
+
+<section>
+  <p className='sectionTitle'>介绍</p>
+  <hr/>
+  <p>rua</p>
+</section>
+
+<section>
+  <p className='sectionTitle'>名称由来</p>
+  <hr/>
+  <p>rua</p>
+</section>
+</article>
         </Col>
       </Row>
     </>
