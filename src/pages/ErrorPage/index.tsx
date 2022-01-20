@@ -1,7 +1,7 @@
-import { Divider } from 'antd';
+import { Col, Divider, Row } from 'antd';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CurrentPageStorage, LangStorage } from '../../dataStorage/storage';
+import { CurrentPageStorage, DeviceStorage, LangStorage } from '../../dataStorage/storage';
 import LangUtils from '../../locales/langUtils';
 
 interface P {
@@ -23,7 +23,9 @@ export default (props: P) => {
 
   return (
     <>
-      <div style={{ backgroundColor: 'white', borderRadius: '5px', marginTop: '10px' }}>
+            <Row>
+          <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
+          <div style={{ backgroundColor: 'white', borderRadius: '5px', marginTop: '10px' }}>
         <div style={{ padding: '60px 30px' }}>
           <p style={{ fontSize: '50px', color: 'red' }}>404</p>
           <Divider />
@@ -35,6 +37,9 @@ export default (props: P) => {
           <Link to={returnRoute as string}>{returnText}</Link>
         </div>
       </div>
+          </Col>
+        </Row>
+
     </>
   );
 }

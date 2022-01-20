@@ -1,3 +1,62 @@
 .sectionTitle{
     font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-fullscreen{
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.video-fullscreen-phone{
+    position: fixed;
+    z-index: 1;
+}
+
+.button-list button{
+    background-color: white;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: all 0.3s;
+}
+
+@media (any-hover: hover){
+
+    .button-list button:hover{
+
+        background-color: lightgray;
+    }
+}
+
+.button-list button:active{
+    background-color: gray;
+}
+
+.videolist-item-selected{
+    background-color: white;
+}
+
+.videolist-item{
+    background-color: gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.videolist-item p{
+    margin: 0;
+}
+
+.videolist-item .playicon{
+    font-size:300%;
 }

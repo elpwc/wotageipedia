@@ -1,7 +1,7 @@
 import { Button, Col, Row, Space, Tag } from 'antd';
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CurrentPageStorage, IsFirstEnterStorage, WinWidthStorage } from '../../dataStorage/storage';
+import { CurrentPageStorage, DeviceStorage, IsFirstEnterStorage, WinWidthStorage } from '../../dataStorage/storage';
 import LangUtils from '../../locales/langUtils';
 import WinSize from '../../utils/enums/WinSize';
 import Updater from '../../utils/Updater';
@@ -41,9 +41,9 @@ interface P {
 
 export default (props: P) => {
   const navigate = useNavigate();
-  
+
   const L = LangUtils.selectLang();
-  
+
   useEffect(() => {
     document.title = 'WOTAGEIPEDIA';
     CurrentPageStorage.set('home');
@@ -60,14 +60,19 @@ export default (props: P) => {
 
   return (
     <>
-      <Row justify='space-around' wrap style={{ marginTop: '30px' }}>
-        <Col>
-          <MainContent />
-        </Col>
-        <Col span={WinWidthStorage.value >= WinSize.lg ? 6 : undefined}>
-          <RightSide />
+      <Row>
+        <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
+          <Row justify='space-around' wrap style={{ marginTop: '30px' }}>
+            <Col>
+              <MainContent />
+            </Col>
+            <Col span={WinWidthStorage.value >= WinSize.lg ? 6 : undefined}>
+              <RightSide />
+            </Col>
+          </Row>
         </Col>
       </Row>
+
     </>
   );
 };

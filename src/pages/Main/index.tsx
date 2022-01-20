@@ -248,11 +248,8 @@ export default (props: P) => {
           zIndex: 1,
         }}
       >
-        <Row>
-          <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
-            <Outlet />
-          </Col>
-        </Row>
+        <Outlet />
+
       </div>
     </div>
   );
