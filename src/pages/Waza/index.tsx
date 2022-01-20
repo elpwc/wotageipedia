@@ -1,11 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { useEffect } from 'react';
-import { CurrentPageStorage } from '../../dataStorage/storage';
+import { CurrentPageStorage, WinWidthStorage } from '../../dataStorage/storage';
 import { Navigate, useLocation, useParams } from 'react-router';
 import { Row, Col, Tag } from 'antd';
 import * as wanakana from 'wanakana';
 import Updater from '../../utils/Updater';
 import './index.css';
+import WinSize from '../../utils/enums/WinSize';
 
 const DetailItem = ({ title, children }: { title: JSX.Element | string; children?: JSX.Element | string }) => {
   return (
@@ -96,12 +97,15 @@ export default (props: P) => {
       </div>
 
       <Row style={{ paddingTop: '10px' }} justify='space-between' wrap>
-        <Col span={12}>
-            <div>
-              
-            </div>
+        <Col span={ WinWidthStorage.value > WinSize.xs ? 24 : 24}>
+          <div>
+          <iframe src='//player.bilibili.com/player.html?aid=849727562&bvid=BV1nL4y1H7rx&cid=458304760&page=46&t=2' width='100%' height='400px' scrolling='no' frameBorder='no' allow='fullscreen' allowFullScreen></iframe>
+          </div>
         </Col>
-        <Col >          <article>
+        <Col >          
+        </Col>
+      </Row>
+      <article>
 
 <section>
   <p className='sectionTitle'>介绍</p>
@@ -115,8 +119,6 @@ export default (props: P) => {
   <p>rua</p>
 </section>
 </article>
-        </Col>
-      </Row>
     </>
   );
 };
