@@ -234,8 +234,15 @@ export default (props: P) => {
         >
           ·{L.demoTips.group.title}
         </a>
-        <Modal title='' visible={qqgroupcodeModalVisibility} footer={null} onCancel={() => {setqqgroupcodeModalVisibility(false)}}>
-          <img src={qqgroupcode} width='100%' height='80%'/>
+        <Modal
+          title=''
+          visible={qqgroupcodeModalVisibility}
+          footer={null}
+          onCancel={() => {
+            setqqgroupcodeModalVisibility(false);
+          }}
+        >
+          <img src={qqgroupcode} width='100%' height='80%' />
         </Modal>
       </div>
       <div
@@ -249,7 +256,6 @@ export default (props: P) => {
         }}
       >
         <Outlet />
-
       </div>
     </div>
   );

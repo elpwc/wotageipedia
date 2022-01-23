@@ -2,6 +2,7 @@ import { Row, Col, Tag } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { WinWidthStorage } from '../../../dataStorage/storage';
 import WinSize from '../../../utils/enums/WinSize';
+import VideoCard from './VideoCard';
 
 const MainContent = () => {
   const navigate = useNavigate();
@@ -50,13 +51,13 @@ const MainContent = () => {
 
       <div
         className='dailywaza'
-        style={{ marginTop: WinWidthStorage.value!==WinSize.xs?'30px':'revert' }}
+        style={{ marginTop: WinWidthStorage.value !== WinSize.xs ? '30px' : 'revert' }}
         onClick={() => {
           navigate('./wotagei/1');
         }}
       >
         <span className='videoTitle'>每日一技</span>
-        <Row justify='space-between' style={{justifyContent:'center'}}>
+        <Row justify='space-between' style={{ justifyContent: 'center' }}>
           <Col span={WinWidthStorage.value > WinSize.xs ? 12 : undefined}>
             <iframe src='//player.bilibili.com/player.html?aid=849727562&bvid=BV1nL4y1H7rx&cid=458304760&page=46&t=2' width='100%' scrolling='no' frameBorder='no' allowFullScreen></iframe>
           </Col>
@@ -89,32 +90,10 @@ const MainContent = () => {
 
         <Row justify='space-around'>
           <Col span={WinWidthStorage.value > WinSize.xs ? 11 : undefined}>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <iframe src='//player.bilibili.com/player.html?aid=292830485&bvid=BV1bf4y1J7H9&cid=403718252&page=1&t=33' width='100%' scrolling='no' frameBorder='no' allowFullScreen></iframe>
-              <div className='videoTitleP'>
-                <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-                  <span className='wazaMainName'>霞之门</span>&nbsp;
-                  <span className='wazaAfterName'>霞ヶ門</span>&nbsp;
-                </div>
-              </div>
-              <p className='videoTitleP' style={{ color: 'gray', fontSize: '50%' }}>
-                <span>本家: ゆーきち</span>
-              </p>
-            </div>
+            <VideoCard title='霞之门' secondTitle='霞ヶ門' honke='ゆーきち' url='//player.bilibili.com/player.html?aid=292830485&bvid=BV1bf4y1J7H9&cid=403718252&page=1&t=33' />
           </Col>
           <Col span={WinWidthStorage.value > WinSize.xs ? 12 : undefined}>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-              <iframe src='//player.bilibili.com/player.html?aid=842980636&bvid=BV1H54y167ec&cid=260820916&page=1&t=61.6' width='100%' scrolling='no' frameBorder='no' allowFullScreen></iframe>
-              <div className='videoTitleP'>
-                <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-                  <span className='wazaMainName'>Gate</span>&nbsp;
-                  <span className='wazaAfterName'>ゲート</span>&nbsp;
-                </div>
-              </div>
-              <p className='videoTitleP' style={{ color: 'gray', fontSize: '50%' }}>
-                <span>本家: とらぺ</span>
-              </p>
-            </div>
+            <VideoCard title='Gate' secondTitle='ゲート' honke='とらぺ' url='//player.bilibili.com/player.html?aid=842980636&bvid=BV1H54y167ec&cid=260820916&page=1&t=61.6' />
           </Col>
         </Row>
       </div>

@@ -23,23 +23,22 @@ export default (props: P) => {
 
   return (
     <>
-            <Row>
-          <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
+      <Row>
+        <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
           <div style={{ backgroundColor: 'white', borderRadius: '5px', marginTop: '10px' }}>
-        <div style={{ padding: '60px 30px' }}>
-          <p style={{ fontSize: '50px', color: 'red' }}>404</p>
-          <Divider />
-          <p>
-            {title}
-            <br />
-            {text}
-          </p>
-          <Link to={returnRoute as string}>{returnText}</Link>
-        </div>
-      </div>
-          </Col>
-        </Row>
-
+            <div style={{ padding: '60px 30px' }}>
+              <p style={{ fontSize: '50px', color: 'red' }}>404</p>
+              <Divider />
+              <p>
+                {title}
+                <br />
+                {text}
+              </p>
+              <Link to={returnRoute as string}>{returnText}</Link>
+            </div>
+          </div>
+        </Col>
+      </Row>
     </>
   );
-}
+};

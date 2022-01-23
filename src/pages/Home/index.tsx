@@ -50,7 +50,6 @@ export default (props: P) => {
     props.updater.setUpdate();
   }, []);
 
-
   if (IsFirstEnterStorage.value) {
     alert(L.demoTips.start.alert1);
     alert(L.demoTips.start.alert2);
@@ -66,13 +65,12 @@ export default (props: P) => {
             <Col>
               <MainContent />
             </Col>
-            <Col span={WinWidthStorage.value >= WinSize.lg ? 6 : undefined}>
+            <Col style={{ width: '100%', marginLeft: '20px' }} span={WinWidthStorage.value >= WinSize.lg ? 4 : undefined}>
               <RightSide />
             </Col>
           </Row>
         </Col>
       </Row>
-
     </>
   );
 };
