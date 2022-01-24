@@ -1,5 +1,5 @@
-import { Button, Col, Row, Space, Tag } from 'antd';
-import { useEffect } from 'react';
+import { Button, Col, Modal, Row, Space, Tag } from 'antd';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CurrentPageStorage, DeviceStorage, IsFirstEnterStorage, WinWidthStorage } from '../../dataStorage/storage';
 import LangUtils from '../../locales/langUtils';
@@ -39,6 +39,7 @@ interface P {
   updater: Updater;
 }
 
+
 export default (props: P) => {
   const navigate = useNavigate();
 
@@ -50,12 +51,6 @@ export default (props: P) => {
     props.updater.setUpdate();
   }, []);
 
-  if (IsFirstEnterStorage.value) {
-    alert(L.demoTips.start.alert1);
-    alert(L.demoTips.start.alert2);
-    alert(L.demoTips.start.alert3);
-    IsFirstEnterStorage.set(false);
-  }
 
   return (
     <>

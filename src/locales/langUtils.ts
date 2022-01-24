@@ -29,7 +29,7 @@ export default class LangUtils {
     [Lang.id, 'Bahasa Indonesia'],
   ]
 
-  static selectLang(currentLang?: Lang | undefined): typeof ZhCn {
+  static selectLang(currentLang?: Lang | undefined) {
     if (currentLang === undefined) {
       currentLang = LangStorage.value;
     }

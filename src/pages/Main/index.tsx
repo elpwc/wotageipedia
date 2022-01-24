@@ -1,8 +1,8 @@
 import { Button, Checkbox, Col, Dropdown, Input, Layout, Menu, message, Modal, Row, Select, Space } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Navigate, Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
-import { CurrentPageStorage, LangStorage, AdminModeStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
+import { CurrentPageStorage, LangStorage, AdminModeStorage, DeviceStorage, WinWidthStorage, IsFirstEnterStorage } from '../../dataStorage/storage';
 import BackgroundImage from './resource/bg.jpg';
 import LangUtils, { Lang } from '../../locales/langUtils';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
@@ -35,8 +35,7 @@ export default (props: P) => {
   // Admin Win state
   const [adminWinState, setAdminWinState]: [number, any] = useState(AdminModeStorage.value === 1 ? 2 : 0); // 0 not admin, 1 open requireWin, 2 admin mode
 
-  const [qqgroupcodeModalVisibility, setqqgroupcodeModalVisibility] = useState(false);
-
+  const [demoTipsModalVisibility, setdemoTipsModalVisibility] = useState(false);
   const params = useParams();
   const navigate = useNavigate();
   const mylocation = useLocation();
@@ -49,10 +48,28 @@ export default (props: P) => {
     return <Navigate to='/zhcn' />;
   }
 
+  
+  useEffect(()=>{
+    
+    if (IsFirstEnterStorage.value) {
+      setdemoTipsModalVisibility(true);
+      IsFirstEnterStorage.set(false);
+    }
+    },[IsFirstEnterStorage.value]);
+
   const L = LangUtils.selectLang();
 
   return (
     <div className='main'>
+      
+    <Modal visible={demoTipsModalVisibility}
+          title={L.demoTips.start.title}
+          footer={null}
+          onCancel={() => {
+            setdemoTipsModalVisibility(false);
+          }}>
+          <div>{L.demoTips.start.alert1}</div>
+    </Modal>
       <header
         className='header'
         style={{
@@ -222,28 +239,13 @@ export default (props: P) => {
           boxShadow: '0 0 5px 0 gray',
         }}
       >
-        <a href={LangStorage.value === Lang.zhcn ? 'https://www.wjx.cn/vj/PlWjk8b.aspx' : ''} target='_blank'>
-          ·{L.demoTips.survey}
-        </a>
-        <br />
-
         <a
           onClick={() => {
-            setqqgroupcodeModalVisibility(true);
+            setdemoTipsModalVisibility(true);
           }}
         >
-          ·{L.demoTips.group.title}
+          {L.demoTips.survey}
         </a>
-        <Modal
-          title=''
-          visible={qqgroupcodeModalVisibility}
-          footer={null}
-          onCancel={() => {
-            setqqgroupcodeModalVisibility(false);
-          }}
-        >
-          <img src={qqgroupcode} width='100%' height='80%' />
-        </Modal>
       </div>
       <div
         style={{
