@@ -32,12 +32,12 @@ export default (props: P) => {
         <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
           <VideoPlayerContainer />
 
-          <Row style={{ paddingTop: WinWidthStorage.value === WinSize.xs ? '0px' : '10px' }} justify='space-between' wrap>
+          <Row style={{ paddingTop: WinWidthStorage.value === WinSize.xs ? '0px' : '10px' }} justify="space-between" wrap>
             <Col span={WinWidthStorage.value > WinSize.xs ? 18 : 24}>
               <article style={{ padding: '10px' }}>
-                <AriticleSection title='介绍' />
-                <AriticleSection title='名称由来' />
-                <AriticleSection title='要点' />
+                <AriticleSection title="介绍" />
+                <AriticleSection title="名称由来" />
+                <AriticleSection title="要点" />
               </article>
             </Col>
             <Col span={WinWidthStorage.value > WinSize.xs ? 6 : 24}>

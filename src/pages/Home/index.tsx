@@ -15,19 +15,19 @@ interface VideoBoxProps {
 
 const VideoBox = () => {
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-    <span className='videoTitle'>每日一技</span>
+    <span className="videoTitle">每日一技</span>
 
-    <iframe src='//player.bilibili.com/player.html?aid=292830485&bvid=BV1bf4y1J7H9&cid=403718252&page=1&t=33' width='90%' scrolling='no' frameBorder='no' allowFullScreen></iframe>
-    <div className='videoTitleP'>
+    <iframe src="//player.bilibili.com/player.html?aid=292830485&bvid=BV1bf4y1J7H9&cid=403718252&page=1&t=33" width="90%" scrolling="no" frameBorder="no" allowFullScreen></iframe>
+    <div className="videoTitleP">
       <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-        <span className='wazaMainName'>霞之门</span>&nbsp;
-        <span className='wazaAfterName'>霞ヶ門</span>&nbsp;
+        <span className="wazaMainName">霞之门</span>&nbsp;
+        <span className="wazaAfterName">霞ヶ門</span>&nbsp;
       </div>
       <div>
         <Tag>门系</Tag>
       </div>
     </div>
-    <p className='videoTitleP' style={{ color: 'gray', fontSize: '50%' }}>
+    <p className="videoTitleP" style={{ color: 'gray', fontSize: '50%' }}>
       <span>本家: ゆーきち</span>
       &nbsp;&nbsp;&nbsp;
       <span>演出: ゆーきち</span>
@@ -38,7 +38,6 @@ const VideoBox = () => {
 interface P {
   updater: Updater;
 }
-
 
 export default (props: P) => {
   const navigate = useNavigate();
@@ -51,12 +50,11 @@ export default (props: P) => {
     props.updater.setUpdate();
   }, []);
 
-
   return (
     <>
       <Row>
         <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
-          <Row justify='space-around' wrap style={{ marginTop: '30px' }}>
+          <Row justify="space-around" wrap style={{ marginTop: '30px' }}>
             <Col>
               <MainContent />
             </Col>

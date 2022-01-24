@@ -17,7 +17,6 @@ export enum Lang {
 }
 
 export default class LangUtils {
-
   public static LangNames: [Lang, string][] = [
     [Lang.ja, '日本語'],
     [Lang.zhcn, '简体中文'],
@@ -27,7 +26,7 @@ export default class LangUtils {
     [Lang.en, 'English'],
     [Lang.ms, 'Bahasa Melayu'],
     [Lang.id, 'Bahasa Indonesia'],
-  ]
+  ];
 
   static selectLang(currentLang?: Lang | undefined) {
     if (currentLang === undefined) {
@@ -38,7 +37,7 @@ export default class LangUtils {
         return ZhCn;
       case Lang.ja:
         return Ja;
-        /*
+      /*
       case Lang.zhtw:
         return ZhTw;
       case Lang.en:
@@ -125,6 +124,6 @@ export default class LangUtils {
 
   // 获取包含所有enum值的字符串数组
   static getEnumStrings(): string[] {
-    return Object.keys(Lang).filter((k) => typeof Lang[k as any] === 'number');
+    return Object.keys(Lang).filter(k => typeof Lang[k as any] === 'number');
   }
 }

@@ -13,9 +13,11 @@ export default (props: P) => {
     CurrentPageStorage.set('wotagei');
     props.updater.setUpdate();
   }, []);
-  return         <Row>
-  <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
-    wotagei
-  </Col>
-</Row>;
+  return (
+    <Row>
+      <Col span={DeviceStorage.value === 1 ? 24 : 18} offset={DeviceStorage.value === 1 ? 0 : 3} style={{ /*backgroundColor: 'white', boxShadow: '0 0 5px 0 gray',*/ paddingBottom: '100px' }}>
+        wotagei
+      </Col>
+    </Row>
+  );
 };

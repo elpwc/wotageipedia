@@ -13,7 +13,6 @@ import SiteMenu from './components/Menu';
 import WinSize from '../../utils/enums/WinSize';
 import Updater from '../../utils/Updater';
 import PhoneMenuBar from './components/PhoneMenuBar';
-import qqgroupcode from '../../resource/qqgroup.jpg';
 
 const { Option } = Select;
 
@@ -45,33 +44,32 @@ export default (props: P) => {
   if (LangUtils.getEnumStrings().includes(currentLang)) {
     LangStorage.set(LangUtils.enumStrToLang(currentLang));
   } else {
-    return <Navigate to='/zhcn' />;
+    return <Navigate to="/zhcn" />;
   }
 
-  
-  useEffect(()=>{
-    
+  useEffect(() => {
     if (IsFirstEnterStorage.value) {
       setdemoTipsModalVisibility(true);
       IsFirstEnterStorage.set(false);
     }
-    },[IsFirstEnterStorage.value]);
+  }, [IsFirstEnterStorage.value]);
 
   const L = LangUtils.selectLang();
 
   return (
-    <div className='main'>
-      
-    <Modal visible={demoTipsModalVisibility}
-          title={L.demoTips.start.title}
-          footer={null}
-          onCancel={() => {
-            setdemoTipsModalVisibility(false);
-          }}>
-          <div>{L.demoTips.start.alert1}</div>
-    </Modal>
+    <div className="main">
+      <Modal
+        visible={demoTipsModalVisibility}
+        title={L.demoTips.start.title}
+        footer={null}
+        onCancel={() => {
+          setdemoTipsModalVisibility(false);
+        }}
+      >
+        <div>{L.demoTips.start.alert1}</div>
+      </Modal>
       <header
-        className='header'
+        className="header"
         style={{
           position: 'fixed',
           top: 0,
@@ -87,7 +85,7 @@ export default (props: P) => {
           WebkitBackfaceVisibility: 'hidden',
         }}
       >
-        <Row justify='space-between' wrap={false}>
+        <Row justify="space-between" wrap={false}>
           {WinWidthStorage.value >= WinSize.lg ? (
             <Col span={3}>
               <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap' }}>
@@ -123,25 +121,25 @@ export default (props: P) => {
             }}
           >
             <input
-              className='searchInput'
+              className="searchInput"
               style={{ width: '80%', outline: 'none', fontSize: '110%', border: 'none', backgroundColor: 'transparent', marginLeft: '10px', marginRight: '10px', color: 'white' }}
-              placeholder='搜索技·系·界隈·打师'
+              placeholder="搜索技·系·界隈·打师"
             />
-            <Link to='./' style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+            <Link to="./" style={{ display: 'flex', flexDirection: 'column-reverse' }}>
               <span style={{ color: 'white' }}>
-                <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' className='bi bi-search' viewBox='0 0 16 16'>
-                  <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg>
               </span>
             </Link>
           </Col>
 
           <Col style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'end' }}>
-            <div className='uploadBtn'>
+            <div className="uploadBtn">
               <p style={{ width: 'max-content', margin: 0 }}>
-                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' className='bi bi-upload' viewBox='0 0 16 16'>
-                  <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
-                  <path d='M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z' />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-upload" viewBox="0 0 16 16">
+                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                  <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
                 </svg>
 
                 {WinWidthStorage.value !== WinSize.sm ? <span>&nbsp;&nbsp;添加技·界隈</span> : <></>}
@@ -150,8 +148,8 @@ export default (props: P) => {
             {WinWidthStorage.value > WinSize.xs ? (
               <div>
                 <Space>
-                  <div className='menuBtn'>登录</div>
-                  <div className='menuBtn'>成为编辑者</div>
+                  <div className="menuBtn">登录</div>
+                  <div className="menuBtn">成为编辑者</div>
                 </Space>
               </div>
             ) : (
@@ -179,11 +177,11 @@ export default (props: P) => {
                 </Menu>
               }
             >
-              <a className='ant-dropdown-link' style={{ marginTop: '5px', marginLeft: '10px', marginRight: '10px' }} onClick={(e) => e.preventDefault()}>
+              <a className="ant-dropdown-link" style={{ marginTop: '5px', marginLeft: '10px', marginRight: '10px' }} onClick={e => e.preventDefault()}>
                 <span style={{ color: 'white', width: 'max-content' }}>
-                  <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' className='bi bi-translate' viewBox='0 0 16 16'>
-                    <path d='M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z' />
-                    <path d='M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z' />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-translate" viewBox="0 0 16 16">
+                    <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+                    <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
                   </svg>
                 </span>
               </a>

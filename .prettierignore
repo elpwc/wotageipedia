@@ -1,0 +1,11 @@
+**/*.svg
+package.json
+/dist
+.eslintignore
+*.png
+*.toml
+.gitignore
+.prettierignore
+LICENSE
+/build
+/public
