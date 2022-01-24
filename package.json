@@ -48,6 +48,10 @@
   },
   "devDependencies": {
     "@types/react-cookies": "^0.1.0",
-    "@types/wanakana": "^4.0.3"
+    "@types/wanakana": "^4.0.3",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-react": "^7.28.0"
   }
 }

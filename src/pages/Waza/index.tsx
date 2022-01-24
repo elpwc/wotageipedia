@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 import { useEffect, useState } from 'react';
 import { CurrentPageStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
 import { Navigate, useLocation, useParams } from 'react-router';
