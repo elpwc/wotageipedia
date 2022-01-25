@@ -1,20 +1,6 @@
+import Storage from '../utils/storage';
 import { Lang } from '../locales/langUtils';
 import WinSize, { WinSizeUtils } from '../utils/enums/WinSize';
-
-// Provides a way to share data globally.
-class Storage<T> {
-  constructor(defaultValue: T, functions?: {}) {
-    this.value = defaultValue;
-    if (functions) {
-      this.functions = functions;
-    }
-  }
-  public value!: T;
-  public set = (newValue: T) => {
-    this.value = newValue;
-  };
-  public functions = {};
-}
 
 // Current showing language
 export const LangStorage: Storage<Lang> = new Storage<Lang>(0);

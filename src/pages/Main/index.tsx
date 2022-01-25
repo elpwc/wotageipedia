@@ -56,6 +56,8 @@ export default (props: P) => {
 
   const L = LangUtils.selectLang();
 
+  const onLoginClick = () => {};
+
   return (
     <div className="main">
       <Modal
@@ -68,6 +70,7 @@ export default (props: P) => {
       >
         <div>{L.demoTips.start.alert1}</div>
       </Modal>
+
       <header
         className="header"
         style={{
@@ -148,8 +151,12 @@ export default (props: P) => {
             {WinWidthStorage.value > WinSize.xs ? (
               <div>
                 <Space>
-                  <div className="menuBtn">登录</div>
-                  <div className="menuBtn">成为编辑者</div>
+                  <div className="menuBtn" onClick={onLoginClick}>
+                    登录
+                  </div>
+                  <Link to="./register">
+                    <div className="menuBtn">注册</div>
+                  </Link>
                 </Space>
               </div>
             ) : (

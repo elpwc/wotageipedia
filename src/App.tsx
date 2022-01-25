@@ -13,6 +13,7 @@ import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import WinSize, { WinSizeUtils } from './utils/enums/WinSize';
 import appconfig from './appconfig';
+import Register from './pages/Register';
 
 function App() {
   const [update, setUpdate]: [number, any] = useState(0);
@@ -88,17 +89,18 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
-        <Route index element={<Navigate to='./zhcn' />}></Route>
+        <Route index element={<Navigate to="./zhcn" />}></Route>
 
-        <Route path=':lang' element={<Main updater={{ update, setUpdate: updateNow }} />}>
+        <Route path=":lang" element={<Main updater={{ update, setUpdate: updateNow }} />}>
           <Route index element={<Home updater={{ update, setUpdate: updateNow }} />}></Route>
-          <Route path='wotagei' element={<Wotagei updater={{ update, setUpdate: updateNow }} />}></Route>
-          <Route path='wotagei/:wazaid' element={<Waza updater={{ update, setUpdate: updateNow }} />}></Route>
-          <Route path='bbs' element={<BBS />}></Route>
-          <Route path='404' element={<ErrorPage />}></Route>
-          <Route path='*' element={<ErrorPage />}></Route>
+          <Route path="wotagei" element={<Wotagei updater={{ update, setUpdate: updateNow }} />}></Route>
+          <Route path="wotagei/:wazaid" element={<Waza updater={{ update, setUpdate: updateNow }} />}></Route>
+          <Route path="bbs" element={<BBS updater={{ update, setUpdate: updateNow }} />}></Route>
+          <Route path="register" element={<Register updater={{ update, setUpdate: updateNow }} />}></Route>
+          <Route path="404" element={<ErrorPage />}></Route>
+          <Route path="*" element={<ErrorPage />}></Route>
         </Route>
       </Routes>
     </div>
