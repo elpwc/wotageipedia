@@ -26,11 +26,11 @@ const VideoPlayerContainer = () => {
   }, [WinWidthStorage.value]);
 
   return (
-    <Row style={{ marginTop: WinWidthStorage.value === WinSize.xs ? '0px' : '0px', padding: WinWidthStorage.value === WinSize.xs ? '0px' : '3px' }} justify='space-between' wrap>
+    <Row style={{ marginTop: WinWidthStorage.value === WinSize.xs ? '0px' : '0px', padding: WinWidthStorage.value === WinSize.xs ? '0px' : '3px' }} justify="space-between" wrap>
       <Col span={WinWidthStorage.value > WinSize.xs ? 18 : 24}>
-        <div style={{ backgroundColor: '#0d0d0d', borderRadius: '3px', boxShadow: '0 0 5px 0 gray', padding: '2px' }}>
+        <div style={{ backgroundColor: /*'#0d0d0d'*/ 'white', borderRadius: '3px', boxShadow: '0 0 5px 0 gray', padding: '2px' }}>
           <div
-            className='button-list'
+            className="button-list"
             style={{
               position: fullscreen ? 'fixed' : 'inherit',
               zIndex: 3,
@@ -108,16 +108,16 @@ const VideoPlayerContainer = () => {
               height: fullscreen ? (WinWidthStorage.value === WinSize.xs ? `${window.innerWidth}px` : 'calc( 100% - 50px )') : getVideoContainerHight(),
             }}
             className={fullscreen ? (WinWidthStorage.value > WinSize.xs ? 'video-fullscreen' : 'video-fullscreen-phone') : ''}
-            id='video-container'
+            id="video-container"
           >
             <iframe
-              title='video'
-              src='//player.bilibili.com/player.html?aid=849727562&bvid=BV1nL4y1H7rx&cid=458304760&page=46&t=2'
-              width='100%'
-              height='100%'
-              scrolling='no'
-              frameBorder='no'
-              allow='fullscreen'
+              title="video"
+              src="//player.bilibili.com/player.html?aid=849727562&bvid=BV1nL4y1H7rx&cid=458304760&page=46&t=2"
+              width="100%"
+              height="100%"
+              scrolling="no"
+              frameBorder="no"
+              allow="fullscreen"
               allowFullScreen
             ></iframe>
           </div>
@@ -139,7 +139,7 @@ const VideoPlayerContainer = () => {
               <p style={{ color: 'white', margin: '0', marginRight: '10px', fontWeight: 'bold', fontSize: '110%' }}>
                 <PlayCircleFilled /> 参考视频
               </p>
-              <div className='button-list'>
+              <div className="button-list">
                 <button>
                   <PlusOutlined />
                   添加视频
@@ -149,23 +149,23 @@ const VideoPlayerContainer = () => {
           </div>
 
           <div style={{ padding: '5px' }}>
-            <VideoListItem title='【WOTA艺】技单60发!!【Fly-N】（搬运）' performer='nanase' site={VideoSites.Bilibili} selected />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
-            <VideoListItem title='技連60発!!【Fly-N】' performer='nanase' site={VideoSites.Youtube} />
+            <VideoListItem title="【WOTA艺】技单60发!!【Fly-N】（搬运）" performer="nanase" site={VideoSites.Bilibili} selected />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
+            <VideoListItem title="技連60発!!【Fly-N】" performer="nanase" site={VideoSites.Youtube} />
           </div>
         </div>
       </Col>
