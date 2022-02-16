@@ -1,6 +1,5 @@
 import { Button, Col, Row } from 'antd';
 import { WinWidthStorage } from '../../../dataStorage/storage';
-import { CyalumeSVG } from '../../../resource/svgs';
 import WinSize from '../../../utils/enums/WinSize';
 import { CyalumeSVG } from '../../../utils/svgs/cyalume';
 
