@@ -10,11 +10,13 @@ const RightSide = () => {
         <Col>
           <p style={{ fontSize: '120%', fontWeight: 'bold', fontStyle: 'italic' }}>WotageiPedia至今已经收录了...</p>
           <ul className="currentList" style={{ paddingLeft: WinWidthStorage.value === WinSize.xs ? 0 : 'revert' }}>
-            <li>1421 个副歌技</li>
-            <li>1982 个副歌技视频</li>
-            <li>52 个副歌技系属</li>
-            <li>212 位打师</li>
-            <li>52 个界隈</li>
+            <li>1991 个副歌技</li>
+            <li>1132 个副歌技视频</li>
+            <li>49 个副歌技系属</li>
+            <li>582 位打师</li>
+            <li>110 个界隈</li>
+            <li>40 种光棒</li>
+            <li>182 首打艺用曲</li>
           </ul>
         </Col>
         <Col>
