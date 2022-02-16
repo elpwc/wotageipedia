@@ -5,7 +5,7 @@ export default {
     chikagei: 'Chikagei',
     bbs: 'Forum',
     kaiwaimap: 'Kaiwai Map',
-    user: 'Account'
+    user: 'Account',
   },
 
   components: {},

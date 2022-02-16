@@ -5,11 +5,10 @@ export default {
     chikagei: '지하예',
     bbs: '게시판',
     kaiwaimap: '계외 지도',
-    user: 'Account'
+    user: 'Account',
   },
 
-  components: {
-  },
+  components: {},
 
   utils: {
     langs: {

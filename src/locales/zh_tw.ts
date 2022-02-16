@@ -5,7 +5,7 @@ export default {
     chikagei: '地下藝',
     bbs: '討論區',
     kaiwaimap: '界隈地圖',
-    user: '賬戶設定'
+    user: '賬戶設定',
   },
 
   components: {},

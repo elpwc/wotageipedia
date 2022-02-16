@@ -18,4 +18,3 @@ declare namespace API {
     uid: string;
   }
 }
-

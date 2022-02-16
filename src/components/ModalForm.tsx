@@ -59,7 +59,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ title, visible, onSubmit, onCance
       cancelText={cancelButtonTitle ? cancelButtonTitle : 'Cancel'}
       destroyOnClose={true} // important
     >
-      <Form size='small' labelCol={{ span: 4 }} form={form} layout='horizontal' name='userForm' onFinish={onSubmit} onFinishFailed={onSubmitFailed}>
+      <Form size="small" labelCol={{ span: 4 }} form={form} layout="horizontal" name="userForm" onFinish={onSubmit} onFinishFailed={onSubmitFailed}>
         {items.map((item: ModalFormItem) => {
           return (
             <Form.Item name={item.name} label={item.label} rules={item.rules}>
