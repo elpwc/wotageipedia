@@ -1,5 +1,8 @@
 import axios from 'axios';
 import api from '../api/api';
+import cookie from 'react-cookies';
+
+axios.defaults.withCredentials = false;
 
 const service = axios.create({
   baseURL: api.url_debug, //api.url,
@@ -15,7 +18,9 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     //token
-
+    if (config && config.headers) {
+      config.headers.token = cookie.load('token') || '';
+    }
     return config;
   },
   error => {

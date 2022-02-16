@@ -7,6 +7,7 @@ import './index.css';
 import { register } from '../../api/user';
 import Form from 'antd/lib/form/Form';
 import FormItem from 'antd/lib/form/FormItem';
+import { userLogin } from '../../utils/requests/user';
 
 interface P {
   updater: Updater;
@@ -95,6 +96,13 @@ export default (props: P) => {
             }}
           >
             注册
+          </Button>
+          <Button
+            onClick={() => {
+              userLogin(username, password);
+            }}
+          >
+            登录
           </Button>
         </Col>
       </Row>
