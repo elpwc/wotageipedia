@@ -18,3 +18,27 @@ html ::-webkit-scrollbar-track {
 html {
   overflow-y: overlay;
 }
+/*
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (min-width: 780px) and (max-width: 999px) {
+}
+
+@media screen and (min-width: 660px) and (max-width: 779px) {
+}
+
+@media screen and (max-width: 659px) {
+}
+*/
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (min-width: 780px) and (max-width: 999px) {
+}
+
+@media screen and (min-width: 660px) and (max-width: 779px) {
+}
+
+@media screen and (max-width: 659px) {
+}

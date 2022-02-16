@@ -7,7 +7,7 @@ import WinSize from '../../utils/enums/WinSize';
 import Updater from '../../utils/Updater';
 import MainContent from './components/MainContent';
 import RightSide from './components/RightSide';
-import './Home.css';
+import './index.css';
 
 interface VideoBoxProps {
   title: string;

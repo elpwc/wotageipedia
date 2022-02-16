@@ -8,7 +8,7 @@ import LangUtils, { Lang } from '../../locales/langUtils';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import cookie from 'react-cookies';
 import appconfig from '../../appconfig';
-import './Main.css';
+import './index.css';
 import SiteMenu from './components/Menu';
 import WinSize from '../../utils/enums/WinSize';
 import Updater from '../../utils/Updater';
@@ -173,13 +173,12 @@ export default (props: P) => {
                   {LangUtils.LangNames.map((lang: [Lang, string]) => {
                     if (appconfig.usingLanguages.includes(lang[0])) {
                       return <Menu.Item key={LangUtils.LangToEnumStr(lang[0])}>{lang[1]}</Menu.Item>;
-                    } else {
-                      return (
-                        <Menu.Item key={'unavailable-' + LangUtils.LangToEnumStr(lang[0])} style={{ backgroundColor: 'lightgray', color: 'gray', cursor: 'not-allowed' }}>
-                          {lang[1]}
-                        </Menu.Item>
-                      );
                     }
+                    return (
+                      <Menu.Item key={'unavailable-' + LangUtils.LangToEnumStr(lang[0])} style={{ backgroundColor: 'lightgray', color: 'gray', cursor: 'not-allowed' }}>
+                        {lang[1]}
+                      </Menu.Item>
+                    );
                   })}
                 </Menu>
               }
