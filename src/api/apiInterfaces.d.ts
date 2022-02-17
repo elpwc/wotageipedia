@@ -17,4 +17,36 @@ declare namespace API {
     message: string;
     uid: string;
   }
+
+  interface WazaBaseResult {
+    id: string;
+    lang: string;
+    name: {
+      lang: string;
+      waza_name: string;
+      alter_name: string;
+      ruby: string;
+      redirect: boolean;
+    };
+    kei: {
+      lang: string;
+      kei_id: string;
+      kei_name: string;
+      redirect: boolean;
+    }[];
+    honke: {
+      honke_id: string;
+      honke_name: string;
+    };
+    kaiwai: {
+      kaiwai_id: string;
+      kaiwai_name: string;
+    };
+    tags: [];
+    related: [];
+    establish_time: string;
+    view_count: number;
+    waza_type: number;
+    difficulty: number;
+  }
 }
