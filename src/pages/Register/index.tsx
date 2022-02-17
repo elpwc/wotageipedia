@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { CurrentPageStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
 import { Navigate, useLocation, useParams } from 'react-router';
 import { Row, Col, Input, Button } from 'antd';
-import Updater from '../../utils/Updater';
+import Updater from '../../interfaces/Updater';
 import './index.css';
 import { register } from '../../api/user';
 import Form from 'antd/lib/form/Form';

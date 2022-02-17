@@ -1,10 +1,10 @@
 import { Row, Col } from 'antd';
 import { memo, useCallback, useState } from 'react';
 import { WinWidthStorage } from '../../../dataStorage/storage';
-import WinSize from '../../../utils/enums/WinSize';
+import WinSize from '../../../interfaces/enums/WinSize';
 import { PlusOutlined, PlayCircleFilled, FullscreenExitOutlined, FullscreenOutlined, SplitCellsOutlined, StarFilled, HeartFilled, ShareAltOutlined, LogoutOutlined } from '@ant-design/icons';
 import VideoListItem from './VideoListItem';
-import VideoSites from '../../../utils/enums/VideoSites';
+import VideoSites from '../../../interfaces/enums/VideoSites';
 
 const VideoPlayerContainer = () => {
   const [rotate, setRotate] = useState(false);

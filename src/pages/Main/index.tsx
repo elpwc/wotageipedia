@@ -3,15 +3,14 @@ import { Header } from 'antd/lib/layout/layout';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { CurrentPageStorage, LangStorage, AdminModeStorage, DeviceStorage, WinWidthStorage, IsFirstEnterStorage } from '../../dataStorage/storage';
-import BackgroundImage from './resource/bg.jpg';
 import LangUtils, { Lang } from '../../locales/langUtils';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import cookie from 'react-cookies';
 import appconfig from '../../appconfig';
 import './index.css';
 import SiteMenu from './components/Menu';
-import WinSize from '../../utils/enums/WinSize';
-import Updater from '../../utils/Updater';
+import WinSize from '../../interfaces/enums/WinSize';
+import Updater from '../../interfaces/Updater';
 import PhoneMenuBar from './components/PhoneMenuBar';
 
 const { Option } = Select;

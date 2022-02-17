@@ -1,5 +1,5 @@
 import { Row, Col } from 'antd';
-import VideoSites from '../../../utils/enums/VideoSites';
+import VideoSites from '../../../interfaces/enums/VideoSites';
 import { BilibiliLogo, YoutubeLogo } from '../../../utils/svgs/videosite';
 
 interface P {

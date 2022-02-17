@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { CurrentPageStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router';
 import { Row, Col } from 'antd';
-import Updater from '../../utils/Updater';
+import Updater from '../../interfaces/Updater';
 import './index.css';
 import LangUtils from '../../locales/langUtils';
 

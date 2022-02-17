@@ -1,6 +1,6 @@
 import { Row, Col, Tag } from 'antd';
 import { DeviceStorage, WinWidthStorage } from '../../../dataStorage/storage';
-import WinSize from '../../../utils/enums/WinSize';
+import WinSize from '../../../interfaces/enums/WinSize';
 
 const DetailItem = ({ title, children }: { title: JSX.Element | string; children?: JSX.Element | string }) => {
   return (

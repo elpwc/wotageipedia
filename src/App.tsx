@@ -11,7 +11,7 @@ import BBS from './pages/BBS';
 import Main from './pages/Main';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
-import WinSize, { WinSizeUtils } from './utils/enums/WinSize';
+import WinSize, { WinSizeUtils } from './interfaces/enums/WinSize';
 import appconfig from './appconfig';
 import Register from './pages/Register';
 

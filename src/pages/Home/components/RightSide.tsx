@@ -1,6 +1,6 @@
 import { Button, Col, Row } from 'antd';
 import { WinWidthStorage } from '../../../dataStorage/storage';
-import WinSize from '../../../utils/enums/WinSize';
+import WinSize from '../../../interfaces/enums/WinSize';
 import { CyalumeSVG } from '../../../utils/svgs/cyalume';
 
 const RightSide = () => {

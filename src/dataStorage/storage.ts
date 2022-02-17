@@ -1,6 +1,6 @@
 import Storage from '../utils/storage';
 import { Lang } from '../locales/langUtils';
-import WinSize, { WinSizeUtils } from '../utils/enums/WinSize';
+import WinSize, { WinSizeUtils } from '../interfaces/enums/WinSize';
 
 // Current showing language
 export const LangStorage: Storage<Lang> = new Storage<Lang>(0);

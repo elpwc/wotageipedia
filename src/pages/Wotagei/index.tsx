@@ -1,7 +1,7 @@
 import { Row, Col } from 'antd';
 import { useEffect } from 'react';
 import { CurrentPageStorage, DeviceStorage } from '../../dataStorage/storage';
-import Updater from '../../utils/Updater';
+import Updater from '../../interfaces/Updater';
 
 interface P {
   updater: Updater;
