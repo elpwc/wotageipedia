@@ -53,7 +53,7 @@ export default {
               技術スタック：
               <br />
             </span>
-            <span style={{ color: '#FFF', borderRadius: '3px', backgroundColor: 'gray' }}>フロントエンド</span> React + TypeScript + Ant Design
+            <span style={{ color: '#FFF', borderRadius: '3px', backgroundColor: 'gray' }}>フロントエンド</span> React + TypeScript
             <br />
             <span style={{ color: '#FFF', borderRadius: '3px', backgroundColor: 'gray' }}>バックエンド</span> Python3.9 + FastAPI + MySQL + Redis, nginx + CentOS
             <br />

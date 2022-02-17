@@ -53,7 +53,7 @@ export default {
               技术栈：
               <br />
             </span>
-            <span style={{ color: '#FFF', borderRadius: '3px', backgroundColor: 'gray' }}>前端</span> React + TypeScript + Ant Design
+            <span style={{ color: '#FFF', borderRadius: '3px', backgroundColor: 'gray' }}>前端</span> React + TypeScript
             <br />
             <span style={{ color: '#FFF', borderRadius: '3px', backgroundColor: 'gray' }}>后端</span> Python3.9 + FastAPI + MySQL + Redis, nginx + CentOS
             <br />
