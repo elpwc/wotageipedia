@@ -22,7 +22,8 @@ const PhoneMenuBar = () => {
             <span>{L.header.home}</span>
           </div>
         </Link>
-
+        {/*
+    
         <Link to="./wotagei" className={'menu-item-phone' + (CurrentPageStorage.value === 'wotagei' ? ' menu-item-active-phone' : '')}>
           <div>
             <p>
@@ -31,7 +32,7 @@ const PhoneMenuBar = () => {
             <span>{L.header.wotagei}</span>
           </div>
         </Link>
-
+    */}
         <Link to="./bbs" className={'menu-item-phone' + (CurrentPageStorage.value === 'bbs' ? ' menu-item-active-phone' : '')}>
           <div>
             <p>

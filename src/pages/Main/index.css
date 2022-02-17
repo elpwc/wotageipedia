@@ -57,7 +57,7 @@
   flex-direction: column;
   height: 100%;
   padding-bottom: 5px;
-  width: 20%;
+  width: -webkit-fill-available;
   color: white;
   font-size: 80%;
   text-align: center;

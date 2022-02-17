@@ -13,6 +13,7 @@ const SiteMenu = () => {
           </div>
         </Link>
 
+        {/* 
         <Link to="./wotagei">
           <div className={'menu-item' + (CurrentPageStorage.value === 'wotagei' ? ' menu-item-active' : '')}>
             <span>{L.header.wotagei}</span>
@@ -23,6 +24,9 @@ const SiteMenu = () => {
             <span>{L.header.chikagei}</span>
           </div>
         </Link>
+        */}
+
+        
         <Link to="./bbs">
           <div className={'menu-item' + (CurrentPageStorage.value === 'bbs' ? ' menu-item-active' : '')}>
             <span>{L.header.bbs}</span>
