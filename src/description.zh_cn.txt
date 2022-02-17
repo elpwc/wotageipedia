@@ -1,0 +1,46 @@
+# 描述文件
+# 给前端参考用的
+# 不知道哪个文件是干什么的可以来着参考
+# 加了新文件也在这写一下
+# 在这查了也不知道干什么的话去群里问
+# *表示任意字符串
+
+/api/                       API相关，参见 http://wotagei.elpwc.com/api/swagger.docs
+/api/api.ts                 API接口定义
+/api/apiInterfaces.d.ts     接口返回格式规范
+/api/*.ts                   请求
+
+/components/                自定义组件
+
+/dataStorage/               全局数据存储（当前语言，当前页面，之类的
+
+/interfaces/                数据格式定义相关
+/interfaces/enums/          枚举们
+/interfaces/*.ts            数据格式定义（技，打师之类的
+
+/locales/                   多语言相关
+/locales/langUtils.ts       语言工具类
+/locales/*.ts               各个语言文本
+
+/pages/                     页面
+/pages/_template/           页面模板，建立新页面复制一份这个用这个改
+/pages/Main/                浏览器上能显示出来的东西都这，但路由在App.tsx
+/pages/*/                   各个页面
+/pages/*/index.tsx          页面主文件
+/pages/*/index.css          页面样式
+/pages/*/components/        页面下分的组件
+
+/resource/                  图片音频之类的
+/resource/svgs.tsx          以前对svg的封装，没在用，现在用的是utils里面的
+
+/utils/                     工具类（实际是垃圾桶 什么都可以扔里面（不是
+/utils/requests/            对请求的二次封装（有需求才二次封装，比如login需要存token，没需要的话，直接调api下面的
+/utils/svgs/                svg图
+/utils/*.ts                 各种工具类
+
+App.tsx                     路由页面，还有一些底层的东西(?)
+appconfig.ts                配置文件
+description.*.txt           说明文件，给新来的前端桑看的
+index.tsx                   入口文件，不用改，除非又加了一个html页
+
+# html跟图标都在 ../public/，通常不要碰
