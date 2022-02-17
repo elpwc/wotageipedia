@@ -4,7 +4,7 @@ export default {
 
   user: {
     register: 'user',
-    login: 'login',
+    login: 'user/login',
     getUserInfoBase: 'user/{userid}/base',
     getUserInfoDetail: 'user/{userid}/extra',
   },
