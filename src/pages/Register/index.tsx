@@ -7,7 +7,7 @@ import './index.css';
 import Form from 'antd/lib/form/Form';
 import FormItem from 'antd/lib/form/FormItem';
 import { userLogin } from '../../utils/requests/user';
-import { createUserApiUserPost } from '../../services/wotageipedia/yonghu';
+//import { createUserApiUserPost } from '../../services/wotageipedia/yonghu';
 
 interface P {
   updater: Updater;
@@ -89,8 +89,8 @@ export default (props: P) => {
           </Form>
           <Button
             onClick={async () => {
-              const a = await createUserApiUserPost({ username, email: '', password, nickname: nick, gender: 0 });
-              console.log(a, 123);
+              //const a = await createUserApiUserPost({ username, email: '', password, nickname: nick, gender: 0 });
+              //console.log(a, 123);
             }}
           >
             注册
