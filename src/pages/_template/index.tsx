@@ -23,6 +23,7 @@ export default (props: P) => {
     props.updater.setUpdate();
   }, []);
 
+  // i18n
   const L = LangUtils.selectLang();
 
   return (

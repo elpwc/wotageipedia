@@ -42,7 +42,7 @@ interface ErrorResponse {
 // 错误拦截
 service.interceptors.response.use(
   res => {
-    return res;
+    return res.data;
   },
   err => {
     const errResponse = err.response;
@@ -65,10 +65,9 @@ service.interceptors.response.use(
         break;
     }
 
-
     return errResponse?.data;
   }
-)
+);
 
 /** 请求格式 */
 interface RequestOptions {
@@ -95,24 +94,27 @@ interface RequestResponse<T = any> {
  * @author wniko
  */
 const request = <T = any>(url: string, options?: RequestOptions): Promise<T> => {
-  return new Promise((resolve: ((value: T) => void), reject: ((error: any) => void)) => {
-    service.request({
-      url,
-      method: options?.method,
-      data: options?.data,
-      params: options?.params,
-      paramsSerializer: options?.paramsSerializer,
-      timeout: options?.timeout,
-      timeoutErrorMessage: options?.timeoutMessage,
-    }).then((response: any) => {
-      // console.log(response);
-      resolve(response.data as T);
-    }).catch((err: ErrorResponse) => {
-      // console.log(err);
-      reject(err);
-    })
+  // eslint-disable-next-line no-unused-vars
+  return new Promise((resolve: (value: T) => void, reject: (error: ErrorResponse) => void) => {
+    service
+      .request({
+        url,
+        method: options?.method,
+        data: options?.data,
+        params: options?.params,
+        paramsSerializer: options?.paramsSerializer,
+        timeout: options?.timeout,
+        timeoutErrorMessage: options?.timeoutMessage,
+      })
+      .then((response: any) => {
+        // console.log(response);
+        resolve(response as T);
+      })
+      .catch((err: ErrorResponse) => {
+        // console.log(err);
+        reject(err);
+      });
   });
-
 };
 
 export default request;

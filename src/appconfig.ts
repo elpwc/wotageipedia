@@ -3,10 +3,11 @@ import { Lang } from './locales/langUtils';
 const inDebug = true;
 
 export default {
+  /** is in development? */
   inDebug: inDebug,
-  /** 启用的语言 */
+  /** available languages */
   usingLanguages: [Lang.ja, Lang.zhcn],
-  /** 服务器根目录 */
+  /** server root folder */
   root: '', //'/wotagei/'
   /** API Base URL */
   apiBaseURL: inDebug ? 'http://wotagei.elpwc.com/' : '/',

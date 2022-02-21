@@ -1,3 +1,7 @@
+/**
+ * umi openAPI config
+ * https://pro.ant.design/zh-CN/docs/openapi
+ */
 import appconfig from './src/appconfig';
 
 export default {
