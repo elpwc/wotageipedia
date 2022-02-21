@@ -1,3 +1,7 @@
+// 防止运行openai报错React nis not defined，不要去掉
+//@ts-ignore
+import React from "react";
+
 export default {
   header: {
     home: '主页',

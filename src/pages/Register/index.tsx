@@ -4,10 +4,10 @@ import { Navigate, useLocation, useParams } from 'react-router';
 import { Row, Col, Input, Button } from 'antd';
 import Updater from '../../interfaces/Updater';
 import './index.css';
-import { register } from '../../api/user';
 import Form from 'antd/lib/form/Form';
 import FormItem from 'antd/lib/form/FormItem';
 import { userLogin } from '../../utils/requests/user';
+//import { createUserApiUserPost } from '../../services/wotageipedia/yonghu';
 
 interface P {
   updater: Updater;
@@ -88,11 +88,9 @@ export default (props: P) => {
             </FormItem>
           </Form>
           <Button
-            onClick={() => {
-              register(username, '', password, nick, 0, '', '').then(res => {
-                console.log(res);
-                const result: API.RegisterResult = res.data;
-              });
+            onClick={async () => {
+              //const a = await createUserApiUserPost({ username, email: '', password, nickname: nick, gender: 0 });
+              //console.log(a, 123);
             }}
           >
             注册

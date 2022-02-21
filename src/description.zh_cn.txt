@@ -5,12 +5,9 @@
 # 在这查了也不知道干什么的话去群里问
 # *表示任意字符串
 
-/api/                       API相关，参见 http://wotagei.elpwc.com/api/swagger.docs
-/api/api.ts                 API接口定义
-/api/apiInterfaces.d.ts     接口返回格式规范
-/api/*.ts                   请求
+/services/                  根据Swagger文档自动生成的接口请求，只需要用，不要改，硬要改的话找后端桑改文档然后删掉/services/再执行npm run openapi重新生成
 
-/components/                自定义组件
+/components/                自定义组件，就是自己画的按钮之类的
 
 /dataStorage/               全局数据存储（当前语言，当前页面，之类的
 
