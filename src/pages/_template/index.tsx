@@ -24,7 +24,7 @@ export default (props: P) => {
   }, []);
 
   // i18n
-  const L = LangUtils.selectLang();
+  const l = LangUtils.selectLang();
 
   return (
     <>

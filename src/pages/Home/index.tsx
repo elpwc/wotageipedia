@@ -42,7 +42,7 @@ interface P {
 export default (props: P) => {
   const navigate = useNavigate();
 
-  const L = LangUtils.selectLang();
+  const l = LangUtils.selectLang();
 
   useEffect(() => {
     document.title = 'WOTAGEIPEDIA';

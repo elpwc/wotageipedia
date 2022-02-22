@@ -5,6 +5,7 @@ import { Row, Col } from 'antd';
 import Updater from '../../interfaces/Updater';
 import './index.css';
 import LangUtils from '../../locales/langUtils';
+import L from 'leaflet';
 
 interface P {
   updater: Updater;
@@ -24,7 +25,7 @@ export default (props: P) => {
   }, []);
 
   // i18n
-  const L = LangUtils.selectLang();
+  const l = LangUtils.selectLang();
 
   return (
     <>

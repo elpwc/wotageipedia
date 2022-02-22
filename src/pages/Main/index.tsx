@@ -53,7 +53,7 @@ export default (props: P) => {
     }
   }, [IsFirstEnterStorage.value]);
 
-  const L = LangUtils.selectLang();
+  const l = LangUtils.selectLang();
 
   const onLoginClick = () => {};
 
@@ -61,13 +61,13 @@ export default (props: P) => {
     <div className="main">
       <Modal
         visible={demoTipsModalVisibility}
-        title={L.demoTips.start.title}
+        title={l.demoTips.start.title}
         footer={null}
         onCancel={() => {
           setdemoTipsModalVisibility(false);
         }}
       >
-        <div>{L.demoTips.start.alert1}</div>
+        <div>{l.demoTips.start.alert1}</div>
       </Modal>
 
       <header
@@ -247,7 +247,7 @@ export default (props: P) => {
             setdemoTipsModalVisibility(true);
           }}
         >
-          {L.demoTips.survey}
+          {l.demoTips.survey}
         </a>
       </div>
       <div

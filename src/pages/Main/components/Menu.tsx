@@ -3,13 +3,13 @@ import { CurrentPageStorage } from '../../../dataStorage/storage';
 import LangUtils from '../../../locales/langUtils';
 
 const SiteMenu = () => {
-  const L = LangUtils.selectLang();
+  const l = LangUtils.selectLang();
   return (
     <>
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
         <Link to="./" style={{ margin: 0 }}>
           <div className={'menu-item' + (CurrentPageStorage.value === 'home' ? ' menu-item-active' : '')}>
-            <span>{L.header.home}</span>
+            <span>{l.header.home}</span>
           </div>
         </Link>
 
@@ -29,12 +29,12 @@ const SiteMenu = () => {
         
         <Link to="./bbs">
           <div className={'menu-item' + (CurrentPageStorage.value === 'bbs' ? ' menu-item-active' : '')}>
-            <span>{L.header.bbs}</span>
+            <span>{l.header.bbs}</span>
           </div>
         </Link>
         <Link to="./kaiwaimap">
           <div className={'menu-item' + (CurrentPageStorage.value === 'kaiwaimap' ? ' menu-item-active' : '')}>
-            <span>{L.header.kaiwaimap}</span>
+            <span>{l.header.kaiwaimap}</span>
           </div>
         </Link>
       </div>
