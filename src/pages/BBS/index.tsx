@@ -1,20 +1,31 @@
+import { useEffect, useState } from 'react';
+import { CurrentPageStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
+import { Navigate, useLocation, useNavigate, useParams } from 'react-router';
 import { Row, Col } from 'antd';
-import { useEffect } from 'react';
-import { CurrentPageStorage, DeviceStorage } from '../../dataStorage/storage';
 import Updater from '../../interfaces/Updater';
-import PostItem from './components/PostItem';
 import './index.css';
+import LangUtils from '../../locales/langUtils';
+import PostItem from './components/PostItem';
 
 interface P {
   updater: Updater;
 }
 
 export default (props: P) => {
+  const params = useParams();
+  const navigate = useNavigate();
+  const mylocation = useLocation();
+
+  // let currentId: number = Number(params.wazaid);
+
   useEffect(() => {
-    // document.title = '';
+    document.title = '御宅艺论坛 - WotageiPedia';
     CurrentPageStorage.set('bbs');
     props.updater.setUpdate();
   }, []);
+
+  // i18n
+  const L = LangUtils.selectLang();
 
   return (
     <Row>

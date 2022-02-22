@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import WinSize, { WinSizeUtils } from './interfaces/enums/WinSize';
 import appconfig from './appconfig';
 import Register from './pages/Register';
+import KaiwaiMap from './pages/KaiwaiMap';
 
 function App() {
   const [update, setUpdate]: [number, any] = useState(0);
@@ -98,6 +99,7 @@ function App() {
           <Route path="wotagei" element={<Wotagei updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="wotagei/:wazaid" element={<Waza updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="bbs" element={<BBS updater={{ update, setUpdate: updateNow }} />}></Route>
+          <Route path="kaiwaimap" element={<KaiwaiMap updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="register" element={<Register updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="404" element={<ErrorPage />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
