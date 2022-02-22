@@ -1,0 +1,20 @@
+.postitem{
+    display: flex;
+    background-color: white;
+    border: solid 1px gray;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.postitem p{
+    margin: 0;
+    padding: 0;
+}
+
+.postitem span{
+    padding-left: 10px;
+}
+
+.postitemtitle{
+    font-weight: bold;
+}
