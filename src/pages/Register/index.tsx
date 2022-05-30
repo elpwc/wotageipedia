@@ -8,6 +8,7 @@ import Form from 'antd/lib/form/Form';
 import FormItem from 'antd/lib/form/FormItem';
 import { userLogin } from '../../utils/requests/user';
 import { createUserApiUserPost } from '../../services/wotageipedia/user';
+import md5 from 'md5';
 //import { createUserApiUserPost } from '../../services/wotageipedia/yonghu';
 
 import Recaptcha from 'react-recaptcha';
@@ -126,7 +127,7 @@ export default (props: P) => {
               } else if (!verified) {
                 message.warn('请点击验证码通过验证');
               } else {
-                const a = await createUserApiUserPost({ username, email: '', password, nickname: username, gender: 0 });
+                const a = await createUserApiUserPost({ username, email: '', password: md5(password), nickname: username, gender: 0 });
                 console.log(a, 123);
               }
             }}
