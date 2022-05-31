@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CurrentPageStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
-import { Navigate, useLocation, useParams } from 'react-router';
+import { Navigate, useLocation, useNavigate, useParams } from 'react-router';
 import { Row, Col, Input, Button, message, Checkbox } from 'antd';
 import Updater from '../../interfaces/Updater';
 import './index.css';
@@ -14,6 +14,7 @@ interface P {
 export default (props: P) => {
   const params = useParams();
   const mylocation = useLocation();
+  const navigate = useNavigate();
 
   // let currentId: number = Number(params.wazaid);
 
@@ -46,12 +47,20 @@ export default (props: P) => {
                   />
                 );
               case 2:
-                return <InfoForm />;
+                return (
+                  <InfoForm
+                    username={username}
+                    onDone={() => {
+                      // 完成注册
+                      navigate('/');
+                    }}
+                  />
+                );
               default:
                 return <></>;
             }
           })()}
-          
+
           <button
             onClick={() => {
               setstep(2);
