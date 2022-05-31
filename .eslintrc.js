@@ -123,12 +123,7 @@ module.exports = {
     'no-with': 2, // 禁用with
     'space-infix-ops': 2, // 中缀操作符周围要不要有空格
     'valid-jsdoc': [
-      2,
-      {
-        // jsdoc规则
-        requireParamDescription: true,
-        requireReturnDescription: true,
-      },
+      0
     ],
     'no-warning-comments': [
       2,

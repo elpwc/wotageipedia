@@ -14,6 +14,21 @@ export async function loginApiUserLoginPost(body: API.UserLogin, options?: { [ke
   });
 }
 
+/** Isexist Username GET /api/user/exist */
+export async function isexistUsernameApiUserExistGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.isexistUsernameApiUserExistGetParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.UserNameCheck200>('/api/user/exist', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
 /** Create User (400: errcode:[1:参数错误]) (200: errcode:[1:用户已存在],[2:未知异常]) POST /api/user */
 export async function createUserApiUserPost(
   body: API.CreateUserBase,

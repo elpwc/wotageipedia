@@ -147,6 +147,19 @@ declare namespace API {
     message?: string;
   };
 
+  type UserNameCheck200 = {
+    /** Respcode */
+    respCode?: number;
+    /** Showtype */
+    showType?: number;
+    /** Msgcode */
+    msgCode?: string;
+    /** Message */
+    message?: string;
+    /** Respdata */
+    respData?: Record<string, any>;
+  };
+
   type UserSearch200 = {
     /** Userlist */
     UserList?: any[];
@@ -390,6 +403,10 @@ declare namespace API {
     searchlimit?: number;
     'jwt-token'?: string;
     'u-id'?: string;
+  };
+
+  type isexistUsernameApiUserExistGetParams = {
+    username: string;
   };
 
   type userInfoBaseApiUser_userid_baseGetParams = {
