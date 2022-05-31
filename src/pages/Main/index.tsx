@@ -1,4 +1,4 @@
-import { Button, Checkbox, Col, Dropdown, Input, Layout, Menu, message, Modal, Row, Select, Space } from 'antd';
+import { Button, Checkbox, Col, Dropdown, Form, Input, Layout, Menu, message, Modal, Row, Select, Space } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
@@ -12,6 +12,8 @@ import SiteMenu from './components/Menu';
 import WinSize from '../../interfaces/enums/WinSize';
 import Updater from '../../interfaces/Updater';
 import PhoneMenuBar from './components/PhoneMenuBar';
+import FormItem from 'antd/lib/form/FormItem';
+import { userLogin } from '../../utils/requests/user';
 
 const { Option } = Select;
 
@@ -34,6 +36,8 @@ export default (props: P) => {
   const [adminWinState, setAdminWinState]: [number, any] = useState(AdminModeStorage.value === 1 ? 2 : 0); // 0 not admin, 1 open requireWin, 2 admin mode
 
   const [demoTipsModalVisibility, setdemoTipsModalVisibility] = useState(false);
+  const [loginModalVisibility, setloginModalVisibility] = useState(false);
+
   const params = useParams();
   const navigate = useNavigate();
   const mylocation = useLocation();
@@ -55,7 +59,9 @@ export default (props: P) => {
 
   const l = LangUtils.selectLang();
 
-  const onLoginClick = () => {};
+  const onLoginClick = () => {
+    setloginModalVisibility(true);
+  };
 
   return (
     <div className="main">
@@ -68,6 +74,50 @@ export default (props: P) => {
         }}
       >
         <div>{l.demoTips.start.alert1}</div>
+      </Modal>
+
+      <Modal
+        visible={loginModalVisibility}
+        title={'登录'}
+        footer={null}
+        onCancel={() => {
+          setloginModalVisibility(false);
+        }}
+      >
+        <Form
+          name="login"
+          labelCol={{ span: 12 }}
+          wrapperCol={{ span: 12 }}
+          initialValues={{ remember: true }}
+          onFinish={values => {
+            console.log(values);
+            userLogin(
+              values.user,
+              values.password,
+              () => {
+                //
+              },
+              (values.user as string).includes('@')
+            );
+          }}
+          onFinishFailed={errorInfo => {
+            console.log(errorInfo);
+          }}
+          autoComplete="off"
+        >
+          <FormItem label="用户ID或者邮箱" name="user">
+            <Input />
+          </FormItem>
+          <FormItem label="密码" name="password">
+            <Input.Password />
+          </FormItem>
+
+          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Button type="primary" htmlType="submit">
+              登录
+            </Button>
+          </Form.Item>
+        </Form>
       </Modal>
 
       <header
