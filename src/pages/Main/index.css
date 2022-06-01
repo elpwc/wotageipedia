@@ -97,3 +97,19 @@
   color: lightgray;
   font-size: 100%;
 }
+
+.usernickname{
+  color: white;
+  font-size: 1rem;
+}
+
+.user{
+  display: flex;
+  gap: 5px;
+  padding: 0 10px;
+
+}
+
+.user img{
+  border-radius: 30px;
+}

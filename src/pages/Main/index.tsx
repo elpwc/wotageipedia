@@ -1,8 +1,8 @@
-import { Button, Checkbox, Col, Dropdown, Form, Input, Layout, Menu, message, Modal, Row, Select, Space } from 'antd';
+import { Button, Checkbox, Col, Dropdown, Form, Input, Layout, Menu, message, Modal, Popover, Row, Select, Space } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
-import { CurrentPageStorage, LangStorage, AdminModeStorage, DeviceStorage, WinWidthStorage, IsFirstEnterStorage } from '../../dataStorage/storage';
+import { CurrentPageStorage, LangStorage, AdminModeStorage, DeviceStorage, WinWidthStorage, IsFirstEnterStorage, CurrentUserStorage, TokenStorage } from '../../dataStorage/storage';
 import LangUtils, { Lang } from '../../locales/langUtils';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import cookie from 'react-cookies';
@@ -14,26 +14,14 @@ import Updater from '../../interfaces/Updater';
 import PhoneMenuBar from './components/PhoneMenuBar';
 import FormItem from 'antd/lib/form/FormItem';
 import { userLogin } from '../../utils/requests/user';
-
-const { Option } = Select;
+import avatarImage from '../../resource/avatar.jpg';
 
 interface P {
   updater: Updater;
 }
 
 export default (props: P) => {
-  const [update, setUpdate]: [boolean, any] = useState(false);
-  const updateNow = () => {
-    setUpdate(!update);
-  };
   console.log(props.updater);
-
-  // Inputed admin password in Admin Win
-  const [pw, setPw]: [string, any] = useState('');
-  // Admin Win para
-  const [rememberPw, setRememberPw]: [boolean, any] = useState(false);
-  // Admin Win state
-  const [adminWinState, setAdminWinState]: [number, any] = useState(AdminModeStorage.value === 1 ? 2 : 0); // 0 not admin, 1 open requireWin, 2 admin mode
 
   const [demoTipsModalVisibility, setdemoTipsModalVisibility] = useState(false);
   const [loginModalVisibility, setloginModalVisibility] = useState(false);
@@ -50,12 +38,51 @@ export default (props: P) => {
     return <Navigate to="/zhcn" />;
   }
 
+  // 用户登录
+  const login = (user: string, password: string, save: boolean) => {
+    userLogin(
+      user,
+      password,
+      loginResponse => {
+        // 成功登录
+        CurrentUserStorage.set(loginResponse);
+        setloginModalVisibility(false);
+        props.updater.setUpdate();
+      },
+      () => {
+        //
+      },
+      save,
+      (user as string).includes('@')
+    );
+  };
+
+  /** 退出登录 */
+  const logout = () => {
+    CurrentUserStorage.set({});
+    TokenStorage.set('');
+    cookie.save('password', '', {});
+    props.updater.setUpdate();
+  };
+
   useEffect(() => {
-    if (IsFirstEnterStorage.value) {
+    if (!cookie.load('notFirst')) {
+      cookie.save('notFirst', 1, {});
+
       setdemoTipsModalVisibility(true);
       IsFirstEnterStorage.set(false);
     }
-  }, [IsFirstEnterStorage.value]);
+
+    if (TokenStorage.value === '') {
+      // 没有登录 检查是否保存了账号密码
+      const userFromCookie = cookie.load('username');
+      const pwFromCookie = cookie.load('password');
+      if (userFromCookie && pwFromCookie) {
+        login(userFromCookie, pwFromCookie, true);
+        props.updater.setUpdate();
+      }
+    }
+  }, []);
 
   const l = LangUtils.selectLang();
 
@@ -91,25 +118,23 @@ export default (props: P) => {
           initialValues={{ remember: true }}
           onFinish={values => {
             console.log(values);
-            userLogin(
-              values.user,
-              values.password,
-              () => {
-                //
-              },
-              (values.user as string).includes('@')
-            );
+            // 登录
+            login(values.user, values.password, values.save);
           }}
           onFinishFailed={errorInfo => {
             console.log(errorInfo);
           }}
           autoComplete="off"
         >
-          <FormItem label="用户ID或者邮箱" name="user">
+          <FormItem label="用户ID或者邮箱" name="user" initialValue={cookie.load('username') ?? ''}>
             <Input />
           </FormItem>
-          <FormItem label="密码" name="password">
+          <FormItem label="密码" name="password" initialValue={cookie.load('password') ?? ''}>
             <Input.Password />
+          </FormItem>
+
+          <FormItem label="记住密码" name="save" valuePropName="checked" initialValue={(cookie.load('password') as string).length > 0}>
+            <Checkbox />
           </FormItem>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
@@ -117,6 +142,11 @@ export default (props: P) => {
               登录
             </Button>
           </Form.Item>
+
+          <Space>
+            <Link to="/">忘记密码</Link>
+            <Link to="/register">注册</Link>
+          </Space>
         </Form>
       </Modal>
 
@@ -199,14 +229,37 @@ export default (props: P) => {
             </div>
             {WinWidthStorage.value > WinSize.xs ? (
               <div>
-                <Space>
-                  <div className="menuBtn" onClick={onLoginClick}>
-                    登录
-                  </div>
-                  <Link to="./register">
-                    <div className="menuBtn">注册</div>
-                  </Link>
-                </Space>
+                {TokenStorage.value !== '' ? ( //用户面板
+                  <Popover
+                    content={
+                      <div>
+                        <Button
+                          onClick={() => {
+                            logout();
+                          }}
+                        >
+                          退出登录
+                        </Button>
+                      </div>
+                    }
+                    trigger="hover"
+                    placement="bottom"
+                  >
+                    <div className="user">
+                      <img src={avatarImage} height="30px" />
+                      <p className="usernickname">{CurrentUserStorage.value.nickname}</p>
+                    </div>
+                  </Popover>
+                ) : (
+                  <Space>
+                    <div className="menuBtn" onClick={onLoginClick}>
+                      登录
+                    </div>
+                    <Link to="./register">
+                      <div className="menuBtn">注册</div>
+                    </Link>
+                  </Space>
+                )}
               </div>
             ) : (
               <></>

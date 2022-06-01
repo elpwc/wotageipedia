@@ -18,3 +18,8 @@ export const DeviceStorage: Storage<number> = new Storage<number>(0); // 0 pc, 1
 export const WinWidthStorage: Storage<WinSize> = new Storage<WinSize>(WinSize.default);
 
 export const IsFirstEnterStorage: Storage<boolean> = new Storage<boolean>(true);
+
+/** token */
+export const TokenStorage: Storage<string> = new Storage<string>('');
+
+export const CurrentUserStorage: Storage<API.UserLogin200> = new Storage<API.UserLogin200>({});
