@@ -15,6 +15,7 @@ import PhoneMenuBar from './components/PhoneMenuBar';
 import FormItem from 'antd/lib/form/FormItem';
 import { userLogin } from '../../utils/requests/user';
 import avatarImage from '../../resource/avatar.jpg';
+import { _rootRoute } from '../../utils/currentRootRoute';
 
 interface P {
   updater: Updater;
@@ -144,8 +145,8 @@ export default (props: P) => {
           </Form.Item>
 
           <Space>
-            <Link to="/">忘记密码</Link>
-            <Link to="/register">注册</Link>
+            <Link to={_rootRoute('/')}>忘记密码</Link>
+            <Link to={_rootRoute('/register')}>注册</Link>
           </Space>
         </Form>
       </Modal>
@@ -217,16 +218,18 @@ export default (props: P) => {
           </Col>
 
           <Col style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'end' }}>
-            <div className="uploadBtn">
-              <p style={{ width: 'max-content', margin: 0 }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-upload" viewBox="0 0 16 16">
-                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                  <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
-                </svg>
+            <Link to={_rootRoute('/upload')}>
+              <div className="uploadBtn">
+                <p style={{ width: 'max-content', margin: 0 }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-upload" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+                  </svg>
 
-                {WinWidthStorage.value !== WinSize.sm ? <span>&nbsp;&nbsp;添加技·界隈</span> : <></>}
-              </p>
-            </div>
+                  {WinWidthStorage.value !== WinSize.sm ? <span>&nbsp;&nbsp;添加技·界隈</span> : <></>}
+                </p>
+              </div>
+            </Link>
             {WinWidthStorage.value > WinSize.xs ? (
               <div>
                 {TokenStorage.value !== '' ? ( //用户面板
@@ -245,17 +248,19 @@ export default (props: P) => {
                     trigger="hover"
                     placement="bottom"
                   >
-                    <div className="user">
-                      <img src={avatarImage} height="30px" />
-                      <p className="usernickname">{CurrentUserStorage.value.nickname}</p>
-                    </div>
+                    <Link to={_rootRoute('/user/' + CurrentUserStorage.value.username)}>
+                      <div className="user">
+                        <img src={avatarImage} height="30px" />
+                        <p className="usernickname">{CurrentUserStorage.value.nickname}</p>
+                      </div>
+                    </Link>
                   </Popover>
                 ) : (
                   <Space>
                     <div className="menuBtn" onClick={onLoginClick}>
                       登录
                     </div>
-                    <Link to="./register">
+                    <Link to={_rootRoute('/register')}>
                       <div className="menuBtn">注册</div>
                     </Link>
                   </Space>

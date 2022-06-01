@@ -6,6 +6,7 @@ import Updater from '../../interfaces/Updater';
 import './index.css';
 import RegisterForm from './components/RegisterForm';
 import InfoForm from './components/InfoForm';
+import { _rootRoute } from '../../utils/currentRootRoute';
 
 interface P {
   updater: Updater;
@@ -52,7 +53,7 @@ export default (props: P) => {
                     username={username}
                     onDone={() => {
                       // 完成注册
-                      navigate('/');
+                      navigate(_rootRoute());
                     }}
                   />
                 );
