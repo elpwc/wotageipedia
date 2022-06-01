@@ -15,7 +15,7 @@ export default (props: P) => {
   const navigate = useNavigate();
   const mylocation = useLocation();
 
-  // let currentId: number = Number(params.wazaid);
+  // let currentId: string = params.id as string;
 
   useEffect(() => {
     // document.title = '';

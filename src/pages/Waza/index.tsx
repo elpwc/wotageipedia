@@ -17,7 +17,7 @@ export default (props: P) => {
   const params = useParams();
   const mylocation = useLocation();
 
-  let currentId: number = Number(params.wazaid);
+  let currentId: string = params.wazaid as string;
 
   useEffect(() => {
     document.title = '烈剑爆炎刃 - WOTAGEIPEDIA';
