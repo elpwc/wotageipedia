@@ -92,7 +92,7 @@ export default (props: P) => {
           <FormItem label={'用户名'}>
             <Input
               value={loginUsername}
-              onChange={e => {
+              onChange={(e: any) => {
                 setusername(e.target.value);
               }}
               placeholder={'用户名'}
@@ -102,7 +102,7 @@ export default (props: P) => {
           <FormItem label={'密码'}>
             <Input
               value={loginUsername}
-              onChange={e => {
+              onChange={(e: any) => {
                 setpassword(e.target.value);
               }}
               placeholder={'密码'}
@@ -223,18 +223,13 @@ export default (props: P) => {
                     navigate(`/${key}/` + mylocation.pathname.split('/').slice(2).join('/'));
                     props.updater.setUpdate();
                   }}
-                >
-                  {LangUtils.LangNames.map((lang: [Lang, string]) => {
+                  items={LangUtils.LangNames.map((lang: [Lang, string]) => {
                     if (appconfig.usingLanguages.includes(lang[0])) {
-                      return <Menu.Item key={LangUtils.LangToEnumStr(lang[0])}>{lang[1]}</Menu.Item>;
+                      return { label: lang[1], key: LangUtils.LangToEnumStr(lang[0]) };
                     }
-                    return (
-                      <Menu.Item key={'unavailable-' + LangUtils.LangToEnumStr(lang[0])} style={{ backgroundColor: 'lightgray', color: 'gray', cursor: 'not-allowed' }}>
-                        {lang[1]}
-                      </Menu.Item>
-                    );
+                    return { label: lang[1], key: 'unavailable-' + LangUtils.LangToEnumStr(lang[0]), disabled: true };
                   })}
-                </Menu>
+                />
               }
             >
               <a className="ant-dropdown-link" style={{ marginTop: '5px', marginLeft: '10px', marginRight: '10px' }} onClick={e => e.preventDefault()}>

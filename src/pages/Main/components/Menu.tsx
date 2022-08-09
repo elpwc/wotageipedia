@@ -32,8 +32,8 @@ const SiteMenu = () => {
             <span>{L.header.bbs}</span>
           </div>
         </Link>
-        <Link to="./kaiwaimap">
-          <div className={'menu-item' + (CurrentPageStorage.value === 'kaiwaimap' ? ' menu-item-active' : '')}>
+        <Link to="./map">
+          <div className={'menu-item' + (CurrentPageStorage.value === 'map' ? ' menu-item-active' : '')}>
             <span>{L.header.kaiwaimap}</span>
           </div>
         </Link>

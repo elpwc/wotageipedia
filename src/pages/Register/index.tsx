@@ -40,7 +40,7 @@ export default (props: P) => {
             <FormItem label={'用户名'}>
               <Input
                 value={username}
-                onChange={e => {
+                onChange={(e: any) => {
                   setusername(e.target.value);
                 }}
                 placeholder={'用户名'}
@@ -50,7 +50,7 @@ export default (props: P) => {
             <FormItem label={'密码'}>
               <Input
                 value={password}
-                onChange={e => {
+                onChange={(e: any) => {
                   setpassword(e.target.value);
                 }}
                 placeholder={'密码'}
@@ -60,7 +60,7 @@ export default (props: P) => {
             <FormItem label={'再输一遍密码'}>
               <Input
                 value={password}
-                onChange={e => {
+                onChange={(e: any) => {
                   setpassword(e.target.value);
                 }}
                 placeholder={'密码确认'}
@@ -70,7 +70,7 @@ export default (props: P) => {
             <FormItem label={'昵称'}>
               <Input
                 value={nick}
-                onChange={e => {
+                onChange={(e: any) => {
                   setnick(e.target.value);
                 }}
                 placeholder={'昵称'}
@@ -80,7 +80,7 @@ export default (props: P) => {
             <FormItem label={'用户名'}>
               <Input
                 value={nick}
-                onChange={e => {
+                onChange={(e: any) => {
                   setnick(e.target.value);
                 }}
                 placeholder={'昵称'}
