@@ -1,4 +1,4 @@
-import { Button, Checkbox, Col, Dropdown, Input, Layout, Menu, message, Modal, Row, Select, Space } from 'antd';
+import { Button, Checkbox, Col, Dropdown, Form, Input, Layout, Menu, message, Modal, Row, Select, Space } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
@@ -12,6 +12,9 @@ import SiteMenu from './components/Menu';
 import WinSize from '../../interfaces/enums/WinSize';
 import Updater from '../../interfaces/Updater';
 import PhoneMenuBar from './components/PhoneMenuBar';
+import ModalForm from '../../components/ModalForm';
+import FormItem from 'antd/lib/form/FormItem';
+import { userLogin } from '../../utils/requests/user';
 
 const { Option } = Select;
 
@@ -33,7 +36,11 @@ export default (props: P) => {
   // Admin Win state
   const [adminWinState, setAdminWinState]: [number, any] = useState(AdminModeStorage.value === 1 ? 2 : 0); // 0 not admin, 1 open requireWin, 2 admin mode
 
+  const [loginUsername, setusername] = useState('');
+  const [loginPassword, setpassword] = useState('');
+
   const [demoTipsModalVisibility, setdemoTipsModalVisibility] = useState(false);
+  const [loginModal, setloginModal] = useState(false);
   const params = useParams();
   const navigate = useNavigate();
   const mylocation = useLocation();
@@ -48,14 +55,17 @@ export default (props: P) => {
 
   useEffect(() => {
     if (IsFirstEnterStorage.value) {
-      setdemoTipsModalVisibility(true);
+      // 正式上线前取消注释
+      // setdemoTipsModalVisibility(true);
       IsFirstEnterStorage.set(false);
     }
   }, [IsFirstEnterStorage.value]);
 
   const L = LangUtils.selectLang();
 
-  const onLoginClick = () => {};
+  const onLoginClick = () => {
+    setloginModal(true);
+  };
 
   return (
     <div className="main">
@@ -70,6 +80,51 @@ export default (props: P) => {
         <div>{L.demoTips.start.alert1}</div>
       </Modal>
 
+      <Modal
+        visible={loginModal}
+        title={'登录'}
+        footer={null}
+        onCancel={() => {
+          setloginModal(false);
+        }}
+      >
+        <Form>
+          <FormItem label={'用户名'}>
+            <Input
+              value={loginUsername}
+              onChange={e => {
+                setusername(e.target.value);
+              }}
+              placeholder={'用户名'}
+            />
+          </FormItem>
+
+          <FormItem label={'密码'}>
+            <Input
+              value={loginUsername}
+              onChange={e => {
+                setpassword(e.target.value);
+              }}
+              placeholder={'密码'}
+            />
+          </FormItem>
+
+          <Button
+            onClick={() => {
+              userLogin(loginUsername, loginPassword);
+            }}
+          >
+            登录
+          </Button>
+          <Button
+            onClick={() => {
+              setloginModal(false);
+            }}
+          >
+            取消
+          </Button>
+        </Form>
+      </Modal>
       <header
         className="header"
         style={{
