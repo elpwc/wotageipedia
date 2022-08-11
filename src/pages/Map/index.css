@@ -1,9 +1,9 @@
 .leftCol {
-  width: 30%;
+  width: 20%;
 }
 
 .rightCol {
-  width: 70%;
+  width: 80%;
 }
 
 .listContainer {
@@ -13,8 +13,6 @@
 }
 
 .searchContainer {
-  display: flex;
-  flex-direction: row;
 }
 
 .listItems {
