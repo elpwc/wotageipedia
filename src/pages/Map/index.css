@@ -1,0 +1,40 @@
+.leftCol {
+  width: 30%;
+}
+
+.rightCol {
+  width: 70%;
+}
+
+.listContainer {
+  height: 100%;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.listItems {
+  height: 500px;
+  padding: 0 5px;
+  overflow-y: scroll;
+}
+
+.listitem {
+  padding: 5px;
+  border-bottom: solid 1px lightgray;
+  cursor: pointer;
+}
+
+@media (any-hover: hover) {
+  .listitem:hover {
+    background-color: lightblue;
+  }
+}
+
+.listitem:active {
+  background-color: gray;
+}
