@@ -97,3 +97,29 @@
   color: lightgray;
   font-size: 100%;
 }
+
+.uploadButtons{
+  background-color: white;
+  border: solid 1px lightgray;
+  width: 50%;
+  height: 60px;
+  font-size: large;
+  cursor: pointer;
+}
+
+.uploadButtons:active{
+
+}
+
+@media (any-hover:hover){
+  .uploadButtons:hover{
+    background-color: lightgray;
+  }
+}
+
+.uploadButtonsContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}

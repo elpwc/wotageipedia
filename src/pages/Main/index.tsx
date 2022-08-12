@@ -1,4 +1,4 @@
-import { Button, Checkbox, Col, Dropdown, Form, Input, Layout, Menu, message, Modal, Row, Select, Space } from 'antd';
+import { Button, Checkbox, Col, Dropdown, Form, Input, Layout, Menu, message, Modal, Popover, Row, Select, Space } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, Outlet, useNavigate, useParams, useLocation } from 'react-router-dom';
@@ -15,6 +15,7 @@ import PhoneMenuBar from './components/PhoneMenuBar';
 import ModalForm from '../../components/ModalForm';
 import FormItem from 'antd/lib/form/FormItem';
 import { userLogin } from '../../utils/requests/user';
+import { CyalumeSVG } from '../../utils/svgs/cyalume';
 
 const { Option } = Select;
 
@@ -125,6 +126,9 @@ export default (props: P) => {
           </Button>
         </Form>
       </Modal>
+
+      <div className="uploadModal"></div>
+
       <header
         className="header"
         style={{
@@ -192,7 +196,47 @@ export default (props: P) => {
           </Col>
 
           <Col style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'end' }}>
-            <Link to="./add" style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+            <Popover
+              content={
+                <div className="uploadButtonsContainer">
+                  <button onClick={() => {}} className="uploadButtons" style={{ borderRadius: '10px 0 0 0' }}>
+                    <span style={{ color: 'orange' }}>
+                      <CyalumeSVG />
+                    </span>
+                    添加新技
+                  </button>
+                  <button onClick={() => {}} className="uploadButtons" style={{ borderRadius: '0 10px 0 0' }}>
+                    <span style={{ color: 'red' }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-play-btn-fill" viewBox="0 0 16 16">
+                        <path d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.79-6.907A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+                      </svg>
+                    </span>
+                    添加新视频
+                  </button>
+                  <button onClick={() => {}} className="uploadButtons" style={{ borderRadius: '0 0 0 10px' }}>
+                    <span style={{ color: 'purple' }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pin-map-fill" viewBox="0 0 16 16">
+                        <path
+                          fillRule="evenodd"
+                          d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"
+                        />
+                        <path fillRule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+                      </svg>
+                    </span>
+                    添加界隈
+                  </button>
+                  <button onClick={() => {}} className="uploadButtons" style={{ borderRadius: '0 0 10px 0' }}>
+                    <span style={{ color: 'blue' }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path fillRule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                      </svg>
+                    </span>
+                    添加打师
+                  </button>
+                </div>
+              }
+            >
               <div className="uploadBtn">
                 <p style={{ width: 'max-content', margin: 0 }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-upload" viewBox="0 0 16 16">
@@ -200,10 +244,10 @@ export default (props: P) => {
                     <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
                   </svg>
 
-                  {WinWidthStorage.value !== WinSize.sm ? <span>&nbsp;&nbsp;添加技·界隈</span> : <></>}
+                  {WinWidthStorage.value !== WinSize.sm ? <span>&nbsp;&nbsp;添加技·界隈等</span> : <></>}
                 </p>
               </div>
-            </Link>
+            </Popover>
 
             {WinWidthStorage.value > WinSize.xs ? (
               <div>
