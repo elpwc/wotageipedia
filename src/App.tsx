@@ -15,7 +15,7 @@ import WinSize, { WinSizeUtils } from './interfaces/enums/WinSize';
 import appconfig from './appconfig';
 import Register from './pages/Register';
 import Map from './pages/Map';
-import Add from './pages/Add';
+import UploadWaza from './pages/UploadWaza';
 
 function App() {
   const [update, setUpdate]: [number, any] = useState(0);
@@ -102,7 +102,7 @@ function App() {
           <Route path="bbs" element={<BBS updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="register" element={<Register updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="map" element={<Map updater={{ update, setUpdate: updateNow }} />}></Route>
-          <Route path="add" element={<Add updater={{ update, setUpdate: updateNow }} />}></Route>
+          <Route path="uploadwaza" element={<UploadWaza updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="404" element={<ErrorPage />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>

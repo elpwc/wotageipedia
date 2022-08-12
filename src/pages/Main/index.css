@@ -105,6 +105,14 @@
   height: 60px;
   font-size: large;
   cursor: pointer;
+  display: flex;
+  padding: auto;
+  color: black;
+}
+
+
+.uploadButtons div{
+  margin: auto;
 }
 
 .uploadButtons:active{
