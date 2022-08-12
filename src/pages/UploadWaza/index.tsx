@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { CurrentPageStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router';
-import { Row, Col, Button, Cascader, DatePicker, Form, Input, InputNumber, Radio, Select, Switch, TreeSelect, Checkbox } from 'antd';
+import { Row, Col, Button, Cascader, DatePicker, Form, Input, InputNumber, Radio, Select, Switch, TreeSelect, Checkbox, Space } from 'antd';
 import Updater from '../../interfaces/Updater';
 import './index.css';
 import LangUtils from '../../locales/langUtils';
 import { SizeType } from 'antd/lib/config-provider/SizeContext';
 import DougaUploader from '../../components/DougaUploader';
+import NameInput from '../../components/NameInput';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
 interface P {
   updater: Updater;
@@ -38,9 +40,27 @@ export default (props: P) => {
                 <Radio.Button value="default">地下艺</Radio.Button>
               </Radio.Group>
             </Form.Item>
-            <Form.Item label="名称" name="namecn">
-              <Input placeholder="" />
-            </Form.Item>
+
+            <Form.List name="names">
+              {(fields, { add, remove }) => (
+                <>
+                  {fields.map(({ key, name, ...restField }, index) => (
+                    <Space key={key} style={{ display: 'flex', marginBottom: 8 }} align="baseline">
+                      <Form.Item {...restField} label={index === 0 ? 'Passengers' : ''} name={[name, 'last']} rules={[{ required: true, message: 'Missing last name' }]}>
+                        <NameInput />
+                      </Form.Item>
+                      <MinusCircleOutlined onClick={() => remove(name)} />
+                    </Space>
+                  ))}
+                  <Form.Item>
+                    <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
+                      添加名称
+                    </Button>
+                  </Form.Item>
+                </>
+              )}
+            </Form.List>
+
             <Form.Item label="本家" name="honke">
               <Input placeholder="" />
             </Form.Item>
