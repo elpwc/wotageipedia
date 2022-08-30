@@ -43,7 +43,7 @@ const PhoneMenuBar = () => {
             <span>{L.header.bbs}</span>
           </div>
         </Link>
-        <Link to="./kaiwaimap" className={'menu-item-phone' + (CurrentPageStorage.value === 'kaiwaimap' ? ' menu-item-active-phone' : '')}>
+        <Link to="./map" className={'menu-item-phone' + (CurrentPageStorage.value === 'kaiwaimap' ? ' menu-item-active-phone' : '')}>
           <div>
             <p>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-pin-map" viewBox="0 0 16 16">
