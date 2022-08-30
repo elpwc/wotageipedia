@@ -36,8 +36,8 @@ export default (props: P) => {
           <Form labelCol={{ span: 4 }} wrapperCol={{ span: 14 }} layout="horizontal">
             <Form.Item label="类型" name="is_chikagei">
               <Radio.Group>
-                <Radio.Button value="default">光棒艺</Radio.Button>
-                <Radio.Button value="default">地下艺</Radio.Button>
+                <Radio.Button value="wotagei">光棒艺</Radio.Button>
+                <Radio.Button value="chikagei">地下艺</Radio.Button>
               </Radio.Group>
             </Form.Item>
 
@@ -46,7 +46,7 @@ export default (props: P) => {
                 <>
                   {fields.map(({ key, name, ...restField }, index) => (
                     <Space key={key} style={{ display: 'flex', marginBottom: 8 }} align="baseline">
-                      <Form.Item {...restField} label={index === 0 ? 'Passengers' : ''} name={[name, 'last']} rules={[{ required: true, message: 'Missing last name' }]}>
+                      <Form.Item {...restField} label={index === 0 ? '名称' : ''} name={[name, 'last']} rules={[{ required: true, message: 'Missing last name' }]}>
                         <NameInput />
                       </Form.Item>
                       <MinusCircleOutlined onClick={() => remove(name)} />
@@ -67,9 +67,7 @@ export default (props: P) => {
             <Form.Item label="作成时间">
               <DatePicker placeholder="" />
             </Form.Item>
-            <Form.Item>
-              <DougaUploader />
-            </Form.Item>
+            <DougaUploader />
             <Form.Item>
               <Button type="primary">提交</Button>
             </Form.Item>
