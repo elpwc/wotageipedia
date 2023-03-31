@@ -44,6 +44,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/bmapgl": "^0.0.5",
     "@types/leaflet": "^1.7.11",
     "@types/react-cookies": "^0.1.0",
     "@types/wanakana": "^4.0.3",

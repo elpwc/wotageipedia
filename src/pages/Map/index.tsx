@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { CurrentPageStorage, DeviceStorage, WinWidthStorage } from '../../dataStorage/storage';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router';
-import { Row, Col, Button } from 'antd';
+import { Row, Col, Button, Select } from 'antd';
 import Updater from '../../interfaces/Updater';
 import './index.css';
 import LangUtils from '../../locales/langUtils';
@@ -36,6 +36,8 @@ export default (props: P) => {
   const [position, setPosition]: [LatLngExpression | null, any] = useState(null);
 
   const [kaiwais, setkaiwais]: [Kaiwai[], any] = useState([]);
+
+  const [mapType, setmapType] = useState('baidu');
 
   const refreshKaiwais = async () => {
     // test data
@@ -129,6 +131,17 @@ export default (props: P) => {
                 <div style={{ display: 'flex' }}>
                   <Button onClick={() => {}}>添加界隈</Button>
                   <Button onClick={onLocate}>定位</Button>
+                  <Select
+                    defaultValue="baidu"
+                    style={{ width: 120 }}
+                    onChange={e => {
+                      setmapType(e);
+                    }}
+                    options={[
+                      { value: 'baidu', label: '百度地图' },
+                      { value: 'opm', label: 'OpenStreetMap' },
+                    ]}
+                  />
                 </div>
                 <Search placeholder="搜索界隈" onSearch={onSearch} style={{ width: '100%' }} />
               </div>
@@ -150,13 +163,24 @@ export default (props: P) => {
             </div>
           </div>
           <div className="rightCol">
-            <div
-              id="map"
-              style={{
-                width: '100%',
-                height: '600px',
-              }}
-            ></div>
+            {(() => {
+              switch (mapType) {
+                case 'baidu':
+                  return <Map></Map>;
+                case 'osm':
+                  return (
+                    <div
+                      id="map"
+                      style={{
+                        width: '100%',
+                        height: '600px',
+                      }}
+                    ></div>
+                  );
+                default:
+                  return <></>;
+              }
+            })()}
           </div>
         </Col>
       </Row>
