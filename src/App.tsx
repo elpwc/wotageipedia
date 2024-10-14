@@ -93,9 +93,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route index element={<Navigate to="./zhcn" />}></Route>
 
-        <Route path=":lang" element={<Main updater={{ update, setUpdate: updateNow }} />}>
+        <Route path="/" element={<Main updater={{ update, setUpdate: updateNow }} />}>
           <Route index element={<Home updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="wotagei" element={<Wotagei updater={{ update, setUpdate: updateNow }} />}></Route>
           <Route path="wotagei/:wazaid" element={<Waza updater={{ update, setUpdate: updateNow }} />}></Route>

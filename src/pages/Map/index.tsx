@@ -166,7 +166,7 @@ export default (props: P) => {
             {(() => {
               switch (mapType) {
                 case 'baidu':
-                  return <Map></Map>;
+                  return <></>;
                 case 'osm':
                   return (
                     <div

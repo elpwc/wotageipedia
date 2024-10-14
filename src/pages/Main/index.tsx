@@ -50,9 +50,7 @@ export default (props: P) => {
 
   if (LangUtils.getEnumStrings().includes(currentLang)) {
     LangStorage.set(LangUtils.enumStrToLang(currentLang));
-  } else {
-    return <Navigate to="/zhcn" />;
-  }
+  } 
 
   useEffect(() => {
     if (IsFirstEnterStorage.value) {
